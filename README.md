@@ -3,6 +3,8 @@
 
 # Vital Sensing with Radar and ML (Hackathon)
 
+[![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ## Getting Started
 
 **TL;DR:** This quick guide explains how to aquire data from the Infineon radar board with Python.
@@ -38,3 +40,24 @@ pip install lsq-ellipse circle_fit
 * [Infineon Radar Development Kit](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradarsdk)
 * [DEMO BGT60TR13C Radar Demo Board](https://www.infineon.com/cms/en/product/evaluation-boards/demo-bgt60tr13c/)
 * [Infineon BGT60TR13C Radar Chip](https://www.infineon.com/cms/en/product/sensor/radar-sensors/radar-sensors-for-iot/60ghz-radar/bgt60tr13c/)
+
+## Infineon Team
+
+<img src="./img/anja.jfif" alt="Anja" height="150"/>
+
+**Anja** (Application & Product Marketing for Radar Sensing)
+
+<img src="./img/souvik.jfif" alt="Souvik" height="150"/>
+
+**Souvik** (Senior Staff Machine Learning Engineer)
+
+<img src="./img/sarfaraz.jfif" alt="Sarfaraz" height="150"/>
+
+**Sarfaraz** (Software Developer for Signal Processing)
+
+<img src="./img/julian.jfif" alt="Julian" height="150"/>
+
+**Julian** (Senior Embedded Systems Engineer)
+
+### How to reach us?
+[![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
