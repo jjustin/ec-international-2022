@@ -32,8 +32,7 @@ pip install lsq-ellipse circle_fit
 **For further information please check the ifxdaq documentation.** To access to documentation navigate in the cloned repository to the folder `docs` and open the file `index.html` with a web browser.
 
 ## Hackathon Material
-* [Challenge Description Slides](tbd)
-* [Infineon App Note Template](tbd)
+* [Challenge Introduction Slides](./challenge_introduction.pdf)
 
 ## Documentation Links
 * [Infineon Radar Development Kit](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradarsdk)
