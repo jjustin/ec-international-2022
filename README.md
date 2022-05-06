@@ -9,7 +9,11 @@
 
 **TL;DR:** This quick guide explains how to aquire data from the Infineon radar board with Python.
 
-Please start by installing the most recent version of [Python](https://www.python.org/) and [Pip](https://pypi.org/project/pip/). We also recommend to install [Jupyter](https://jupyter.org/) for running the examples. Afterwards you can clone this git repo:
+Please start by installing [Python](https://www.python.org/) and [Pip](https://pypi.org/project/pip/). We also recommend to install [Jupyter](https://jupyter.org/) for running the examples.
+
+:warning: The recommended version of Python is 3.7, but it also works with Python 3.9. Problems occur currently with Python 3.10.
+
+Afterwards you can clone this git repo:
 ```
 git clone https://github.com/Infineon/hackathon
 cd hackathon
