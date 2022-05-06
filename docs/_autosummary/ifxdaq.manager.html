@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ifxdaq.manager &mdash; ifxdaq  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ifxdaq.manager_config" href="ifxdaq.manager_config.html" />
+    <link rel="prev" title="ifxdaq.fileio.sync" href="ifxdaq.fileio.sync.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ifxdaq
+            <img src="../_static/ifx_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ifxdaq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daqkit.html">DaqKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../label.html">Labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">FAQ / Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How To Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ifxdaq.html">ifxdaq</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.ai.html">ifxdaq.ai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.custom_typing.html">ifxdaq.custom_typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.errors.html">ifxdaq.errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.fileio.html">ifxdaq.fileio</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ifxdaq.manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager_config.html">ifxdaq.manager_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.process.html">ifxdaq.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.record.html">ifxdaq.record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.sensor.html">ifxdaq.sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.thread.html">ifxdaq.thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.utils.html">ifxdaq.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.worker.html">ifxdaq.worker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../file_format.html">File format reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ifxdaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API reference</a> &raquo;</li>
+          <li><a href="ifxdaq.html">ifxdaq</a> &raquo;</li>
+      <li>ifxdaq.manager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/ifxdaq.manager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ifxdaq.manager">
+<span id="ifxdaq-manager"></span><h1>ifxdaq.manager<a class="headerlink" href="#module-ifxdaq.manager" title="Permalink to this headline"></a></h1>
+<p>This module contains the <cite>SensorManager</cite>, which is used to operate multiple sensors simultaneously.</p>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.manager.SensorManager" title="ifxdaq.manager.SensorManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SensorManager</span></code></a>([sensors, workers, config_file])</p></td>
+<td><p>Class to manage multiple sensors on an abstract level.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.manager.</span></span><span class="sig-name descname"><span class="pre">SensorManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensors=('ifxdaq.sensor.radar_ifx.RadarIfxAvian'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'ifxdaq.sensor.camera_cvb.CamCommonVisionBlox'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'ifxdaq.sensor.camera_irs.CamIntelRealSense')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workers=(&lt;class</span> <span class="pre">'ifxdaq.worker.RecordingWorker'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'ifxdaq.worker.VisualizationWorker'&gt;)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file='config.yaml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to manage multiple sensors on an abstract level.</p>
+<dl class="simple">
+<dt>Currently supported sensors:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="ifxdaq.sensor.radar_ifx.html#ifxdaq.sensor.radar_ifx.RadarIfxAvian" title="ifxdaq.sensor.radar_ifx.RadarIfxAvian"><code class="xref py py-class docutils literal notranslate"><span class="pre">RadarIfxAvian</span></code></a></p></li>
+<li><p><a class="reference internal" href="ifxdaq.sensor.camera_cvb.html#ifxdaq.sensor.camera_cvb.CamCommonVisionBlox" title="ifxdaq.sensor.camera_cvb.CamCommonVisionBlox"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamCommonVisionBlox</span></code></a></p></li>
+<li><p><a class="reference internal" href="ifxdaq.sensor.camera_irs.html#ifxdaq.sensor.camera_irs.CamIntelRealSense" title="ifxdaq.sensor.camera_irs.CamIntelRealSense"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamIntelRealSense</span></code></a></p></li>
+<li><p><a class="reference internal" href="ifxdaq.sensor.camera_ocv.html#ifxdaq.sensor.camera_ocv.CamOpenCV" title="ifxdaq.sensor.camera_ocv.CamOpenCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamOpenCV</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><a class="reference internal" href="ifxdaq.sensor.camera_ocv.html#ifxdaq.sensor.camera_ocv.CamOpenCV" title="ifxdaq.sensor.camera_ocv.CamOpenCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamOpenCV</span></code></a> has negative side effects
+on other cameras, e.g. <a class="reference internal" href="ifxdaq.sensor.camera_irs.html#ifxdaq.sensor.camera_irs.CamIntelRealSense" title="ifxdaq.sensor.camera_irs.CamIntelRealSense"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamIntelRealSense</span></code></a>
+and is disabled by default.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sensors</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Sensors to use. List of module names, e.g. <cite>ifxdaq.sensor.radar_ifx.RadarIfxAvian</cite>.</p></li>
+<li><p><strong>workers</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">WorkerABC</span></code>]]) – Workers to use. List of classes, e.g. <cite>RecordingWorker</cite>.</p></li>
+<li><p><strong>config_file</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – Configuration file for the manager.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ifxdaq.manager_config.html#ifxdaq.manager_config.ManagerConfig" title="ifxdaq.manager_config.ManagerConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManagerConfig</span></code></a></p></li>
+<li><p><a class="reference internal" href="ifxdaq.manager_config.html#ifxdaq.manager_config.SensorConfig" title="ifxdaq.manager_config.SensorConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">SensorConfig</span></code></a></p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.close" title="Permalink to this definition"></a></dt>
+<dd><p>Close the sensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Key indicating the sensor in the internal storage.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.close_all">
+<span class="sig-name descname"><span class="pre">close_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.close_all" title="Permalink to this definition"></a></dt>
+<dd><p>Close all open sensors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.configure">
+<span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.configure" title="Permalink to this definition"></a></dt>
+<dd><p>Configure the sensor with the provided configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Key indicating the sensor in the internal storage.</p></li>
+<li><p><strong>config_file</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – File to configure the sensor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If the provided <cite>config_file</cite> does not exist.</p></li>
+<li><p><strong>IsADirectoryError</strong> – If the provided <cite>config_file</cite> is a directory instead of a file.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.discover">
+<span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.discover" title="Permalink to this definition"></a></dt>
+<dd><p>Discover attached devices and update the internal sensor list and configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.shutdown">
+<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.shutdown" title="Permalink to this definition"></a></dt>
+<dd><p>Shut the manager down.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.start" title="Permalink to this definition"></a></dt>
+<dd><p>Start the sensor in a background process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Key indicating the sensor in the internal storage.</p></li>
+<li><p><strong>timeout</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Maximum allowed time to open the sensor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="ifxdaq.process.html#ifxdaq.process.SensorProcess" title="ifxdaq.process.SensorProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">SensorProcess</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The started process.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.start_recording">
+<span class="sig-name descname"><span class="pre">start_recording</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recording_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('/home/jenkins/agent/workspace/DAQ_ifxdaq_v3.0.1')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.start_recording" title="Permalink to this definition"></a></dt>
+<dd><p>Start a recording with all opened sensors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>recording_path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Recording will be written into this path. If not provided, the invoking path is used.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Path of the recording.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.start_visualization">
+<span class="sig-name descname"><span class="pre">start_visualization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.start_visualization" title="Permalink to this definition"></a></dt>
+<dd><p>Start to forward visualizations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.stop_recording">
+<span class="sig-name descname"><span class="pre">stop_recording</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.stop_recording" title="Permalink to this definition"></a></dt>
+<dd><p>Stop a recording.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.stop_visualization">
+<span class="sig-name descname"><span class="pre">stop_visualization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.manager.SensorManager.stop_visualization" title="Permalink to this definition"></a></dt>
+<dd><p>Stop to forward visualizations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ifxdaq.manager.SensorManager.sensors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sensors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ifxdaq.manager_config.html#ifxdaq.manager_config.Sensor" title="ifxdaq.manager_config.Sensor"><span class="pre">ifxdaq.manager_config.Sensor</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ifxdaq.manager.SensorManager.sensors" title="Permalink to this definition"></a></dt>
+<dd><p>The sensors managed by the sensor manager (Initially empty - run <cite>discover</cite> to find attached sensors).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="ifxdaq.manager_config.html#ifxdaq.manager_config.Sensor" title="ifxdaq.manager_config.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sensor</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ifxdaq.fileio.sync.html" class="btn btn-neutral float-left" title="ifxdaq.fileio.sync" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ifxdaq.manager_config.html" class="btn btn-neutral float-right" title="ifxdaq.manager_config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright restricted | Infineon Technologies. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

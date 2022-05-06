@@ -1,0 +1,33 @@
+Visualization stage
+^^^^^^^^^^^^^^^^^^^
+
+Visualize the generated labels. This will produce overview plots of the generated labels and a video based on the initial
+inputs with labels overlaid. Optionally, anonymization can be applied to hide persons in the resulting video.
+
+.. list-table:: Different anonymization styles
+    :widths: 33 33 33
+    :header-rows: 1
+
+    * - ``BLACKEN``
+      - ``BLUR``
+      - ``PIXEL``
+    * - .. image:: media/anonymization_blacken.jpg
+      - .. image:: media/anonymization_blur.jpg
+      - .. image:: media/anonymization_pixel.jpg
+
+
+.. warning::
+    The anonymization can only be applied to detected and tracked persons. If a person was not detected, he or she
+    will be visible in resulting video. Consequently, we do not guarantee a perfect anonymization. Please keep this
+    in mind when sharing sensitive data with others.
+
+
+.. list-table:: **Available stages**
+    :header-rows: 1
+
+    * - Stage name
+      - Description & Parameters (API)
+
+    * - ``visualization``
+      - .. autofunction:: ifxdaq.ai.visualization.stage.visualization
+          :noindex:

@@ -1,0 +1,29 @@
+ifxdaq.ai.world\_coordinates.depth
+==================================
+
+.. automodule:: ifxdaq.ai.world_coordinates.depth
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      add_world_coordinates
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

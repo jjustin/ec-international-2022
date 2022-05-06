@@ -1,0 +1,30 @@
+ifxdaq.fileio.sync
+==================
+
+.. automodule:: ifxdaq.fileio.sync
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      synced_iter
+      synchronize
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

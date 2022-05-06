@@ -1,0 +1,35 @@
+ifxdaq.ai.tracking.stage
+========================
+
+.. automodule:: ifxdaq.ai.tracking.stage
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      tracking
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TrackingStage
+   
+   
+
+   
+   
+   
+
+
+

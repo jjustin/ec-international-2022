@@ -1,0 +1,29 @@
+ifxdaq.ai.filter.short
+======================
+
+.. automodule:: ifxdaq.ai.filter.short
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ShortTrackFilter
+   
+   
+
+   
+   
+   
+
+
+

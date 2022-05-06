@@ -1,0 +1,30 @@
+ifxdaq.record
+=============
+
+.. automodule:: ifxdaq.record
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DataRecorder
+      Map
+   
+   
+
+   
+   
+   
+
+
+

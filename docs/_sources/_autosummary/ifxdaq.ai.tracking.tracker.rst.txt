@@ -1,0 +1,29 @@
+ifxdaq.ai.tracking.tracker
+==========================
+
+.. automodule:: ifxdaq.ai.tracking.tracker
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Tracker
+   
+   
+
+   
+   
+   
+
+
+

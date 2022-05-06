@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ifxdaq.errors &mdash; ifxdaq  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ifxdaq.fileio" href="ifxdaq.fileio.html" />
+    <link rel="prev" title="ifxdaq.custom_typing" href="ifxdaq.custom_typing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ifxdaq
+            <img src="../_static/ifx_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ifxdaq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daqkit.html">DaqKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../label.html">Labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">FAQ / Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How To Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ifxdaq.html">ifxdaq</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.ai.html">ifxdaq.ai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.custom_typing.html">ifxdaq.custom_typing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ifxdaq.errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.fileio.html">ifxdaq.fileio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager.html">ifxdaq.manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager_config.html">ifxdaq.manager_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.process.html">ifxdaq.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.record.html">ifxdaq.record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.sensor.html">ifxdaq.sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.thread.html">ifxdaq.thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.utils.html">ifxdaq.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.worker.html">ifxdaq.worker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../file_format.html">File format reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ifxdaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API reference</a> &raquo;</li>
+          <li><a href="ifxdaq.html">ifxdaq</a> &raquo;</li>
+      <li>ifxdaq.errors</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/ifxdaq.errors.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ifxdaq.errors">
+<span id="ifxdaq-errors"></span><h1>ifxdaq.errors<a class="headerlink" href="#module-ifxdaq.errors" title="Permalink to this headline"></a></h1>
+<p>Module containing custom errors for ifxdaq.</p>
+<p class="rubric">Exceptions</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.errors.RecorderError" title="ifxdaq.errors.RecorderError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecorderError</span></code></a></p></td>
+<td><p>Exception used if there is a problem with recording of data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ifxdaq.errors.SensorConfigurationError" title="ifxdaq.errors.SensorConfigurationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SensorConfigurationError</span></code></a></p></td>
+<td><p>Exception used for errors during sensor configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.errors.SensorError" title="ifxdaq.errors.SensorError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SensorError</span></code></a></p></td>
+<td><p>Generic exception used for errors caused by sensors that are connected with this package.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ifxdaq.errors.SensorNotFoundError" title="ifxdaq.errors.SensorNotFoundError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SensorNotFoundError</span></code></a></p></td>
+<td><p>Exception used if a sensor is not found.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.errors.SensorProcessError" title="ifxdaq.errors.SensorProcessError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SensorProcessError</span></code></a></p></td>
+<td><p>Exception used if an error with a sensor in a separate process occurs.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ifxdaq.errors.RecorderError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.errors.</span></span><span class="sig-name descname"><span class="pre">RecorderError</span></span><a class="headerlink" href="#ifxdaq.errors.RecorderError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception used if there is a problem with recording of data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.errors.RecorderError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.errors.RecorderError.with_traceback" title="Permalink to this definition"></a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.errors.RecorderError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#ifxdaq.errors.RecorderError.args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorConfigurationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.errors.</span></span><span class="sig-name descname"><span class="pre">SensorConfigurationError</span></span><a class="headerlink" href="#ifxdaq.errors.SensorConfigurationError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ifxdaq.errors.SensorError" title="ifxdaq.errors.SensorError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ifxdaq.errors.SensorError</span></code></a></p>
+<p>Exception used for errors during sensor configuration.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorConfigurationError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.errors.SensorConfigurationError.with_traceback" title="Permalink to this definition"></a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorConfigurationError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#ifxdaq.errors.SensorConfigurationError.args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.errors.</span></span><span class="sig-name descname"><span class="pre">SensorError</span></span><a class="headerlink" href="#ifxdaq.errors.SensorError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Generic exception used for errors caused by sensors that are connected with this package.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.errors.SensorError.with_traceback" title="Permalink to this definition"></a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#ifxdaq.errors.SensorError.args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.errors.</span></span><span class="sig-name descname"><span class="pre">SensorNotFoundError</span></span><a class="headerlink" href="#ifxdaq.errors.SensorNotFoundError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ifxdaq.errors.SensorError" title="ifxdaq.errors.SensorError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ifxdaq.errors.SensorError</span></code></a></p>
+<p>Exception used if a sensor is not found.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorNotFoundError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.errors.SensorNotFoundError.with_traceback" title="Permalink to this definition"></a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorNotFoundError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#ifxdaq.errors.SensorNotFoundError.args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorProcessError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.errors.</span></span><span class="sig-name descname"><span class="pre">SensorProcessError</span></span><a class="headerlink" href="#ifxdaq.errors.SensorProcessError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ifxdaq.errors.SensorError" title="ifxdaq.errors.SensorError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ifxdaq.errors.SensorError</span></code></a></p>
+<p>Exception used if an error with a sensor in a separate process occurs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorProcessError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.errors.SensorProcessError.with_traceback" title="Permalink to this definition"></a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.errors.SensorProcessError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#ifxdaq.errors.SensorProcessError.args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ifxdaq.custom_typing.html" class="btn btn-neutral float-left" title="ifxdaq.custom_typing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ifxdaq.fileio.html" class="btn btn-neutral float-right" title="ifxdaq.fileio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright restricted | Infineon Technologies. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

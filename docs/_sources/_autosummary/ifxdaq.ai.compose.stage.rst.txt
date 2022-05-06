@@ -1,0 +1,35 @@
+ifxdaq.ai.compose.stage
+=======================
+
+.. automodule:: ifxdaq.ai.compose.stage
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      compose
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ComposeStage
+   
+   
+
+   
+   
+   
+
+
+

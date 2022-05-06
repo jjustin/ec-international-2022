@@ -1,0 +1,92 @@
+Installation
+============
+
+.. tip::
+
+    It's good practice to use a virtual environment. As libraries get updated, results from running your code can
+    change, or your code can break completely. It's important to be able to reconstruct the set of packages and versions
+    you're using. Best practice is to:
+
+    1. use a different environment per project you're working on,
+    2. record package names and versions using your package installer
+
+    Feel free to install the package into your desired virtual environment (see `virtual environments
+    <https://docs.python.org/3/tutorial/venv.html>`_ and `this guide
+    <https://dev.to/bowmanjd/python-tools-for-managing-virtual-environments-3bko#howto>`_ for details on using virtual
+    environments).
+
+
+Requirements
+^^^^^^^^^^^^
+
+``ifxdaq`` requires Python 3.7-3.9. **Python3.9** is the main development version - use this version if possible.
+
+**Upgrade & install pip, setuptools & wheels**
+
+Upgrade those tools to be able to install external dependencies also from source archives (in case there are no
+pre-built wheels available):
+
+.. code-block:: bash
+
+    python -m pip install -U pip setuptools wheel
+
+
+Installing ifxdaq
+^^^^^^^^^^^^^^^^^
+
+Run the commands below to install the package. If you want to use the labeling algorithms for offline post-processing,
+please install the package with the ``[ai]`` extension as shown below.
+
+
+.. tabs::
+
+    .. tab:: from a ``*.whl`` file
+
+        .. tabs::
+
+            .. code-tab:: bash Core package
+
+                pip install ifxdaq-<version+platform>.whl
+
+            .. code-tab:: bash Core package + Labeling extension
+
+                pip install "ifxdaq-<version+platform>.whl[ai]"
+
+    .. tab:: from Infineon Artifactory
+
+        .. warning::
+            The Infineon Artifactory is only accessible from within the Infineon company network.
+
+        .. tabs::
+
+            .. code-tab:: bash Core package
+
+                pip install ifxdaq --extra-index-url https://artifactory.intra.infineon.com/artifactory/api/pypi/pypi-pmm-center-virtual/simple
+
+            .. code-tab:: bash Core package + Labeling extension
+
+                pip install "ifxdaq[ai]" --extra-index-url https://artifactory.intra.infineon.com/artifactory/api/pypi/pypi-pmm-center-virtual/simple
+
+
+        .. note::
+            You can also add the Infineon Artifactory URL permanently to your pip configuration file & omit the
+            ``--extra-index-url`` flag.
+
+            **Configuration file locations**:
+
+            .. tabs::
+
+                .. tab:: Windows
+
+                    ``C:\Users\<USER>\pip\pip.ini``
+
+                .. tab:: Unix
+
+                    ``/home/<USER>/.pip/pip.conf``
+
+            **Configuration file content**:
+
+            .. code-block::
+
+                [global]
+                index-url = https://artifactory.intra.infineon.com/artifactory/api/pypi/pypi-pmm-center-virtual/simple

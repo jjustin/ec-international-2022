@@ -1,0 +1,29 @@
+ifxdaq.ai.filter.lag
+====================
+
+.. automodule:: ifxdaq.ai.filter.lag
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CropLagFilter
+   
+   
+
+   
+   
+   
+
+
+

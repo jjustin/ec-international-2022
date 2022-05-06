@@ -1,0 +1,37 @@
+ifxdaq.sensor.camera\_irs
+=========================
+
+.. automodule:: ifxdaq.sensor.camera_irs
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      intrinsics_from_dict
+      intrinsics_to_dict
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CamIntelRealSense
+      StreamParameters
+   
+   
+
+   
+   
+   
+
+
+

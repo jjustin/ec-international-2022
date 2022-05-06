@@ -1,0 +1,29 @@
+ifxdaq.ai.detector.abc
+======================
+
+.. automodule:: ifxdaq.ai.detector.abc
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DetectorABC
+   
+   
+
+   
+   
+   
+
+
+

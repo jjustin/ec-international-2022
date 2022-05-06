@@ -1,0 +1,32 @@
+ifxdaq.ai.visualization.anonymization
+=====================================
+
+.. automodule:: ifxdaq.ai.visualization.anonymization
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Anonymization
+      AutoAnonymization
+      BoxAnonymization
+      SegmentationAnonymization
+   
+   
+
+   
+   
+   
+
+
+

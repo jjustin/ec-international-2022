@@ -1,0 +1,32 @@
+Filter stage
+^^^^^^^^^^^^
+
+The filters improve the quality of the tracked labels, which were generated with the :ref:`ai/stages/tracking:tracking
+stage`.
+
+
+.. list-table:: **Available stages**
+    :header-rows: 1
+
+    * - Stage name
+      - Description & Parameters (API)
+
+    * - ``crop_lag``
+      - .. autofunction:: ifxdaq.ai.filter.stage.crop_lag
+          :noindex:
+
+    * - ``merge_tracks``
+      - .. autofunction:: ifxdaq.ai.filter.stage.merge_tracks
+          :noindex:
+
+    * - ``filter_short``
+      - .. autofunction:: ifxdaq.ai.filter.stage.filter_short
+          :noindex:
+
+    * - ``filter_hampel``
+      - .. autofunction:: ifxdaq.ai.filter.stage.filter_hampel
+          :noindex:
+
+    * - ``filter_savgol``
+      - .. autofunction:: ifxdaq.ai.filter.stage.filter_savgol
+          :noindex:

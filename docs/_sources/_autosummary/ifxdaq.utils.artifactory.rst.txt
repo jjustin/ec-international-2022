@@ -1,0 +1,36 @@
+ifxdaq.utils.artifactory
+========================
+
+.. automodule:: ifxdaq.utils.artifactory
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      download_artifact
+      validate_artifactory_path
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ModelLoader
+   
+   
+
+   
+   
+   
+
+
+

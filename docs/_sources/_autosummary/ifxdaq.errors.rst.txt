@@ -1,0 +1,33 @@
+ifxdaq.errors
+=============
+
+.. automodule:: ifxdaq.errors
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      RecorderError
+      SensorConfigurationError
+      SensorError
+      SensorNotFoundError
+      SensorProcessError
+   
+   
+
+
+

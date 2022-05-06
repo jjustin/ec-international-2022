@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ifxdaq.sensor.radar_ifx &mdash; ifxdaq  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ifxdaq.thread" href="ifxdaq.thread.html" />
+    <link rel="prev" title="ifxdaq.sensor.camera_ocv" href="ifxdaq.sensor.camera_ocv.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ifxdaq
+            <img src="../_static/ifx_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ifxdaq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daqkit.html">DaqKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../label.html">Labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">FAQ / Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How To Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ifxdaq.html">ifxdaq</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.ai.html">ifxdaq.ai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.custom_typing.html">ifxdaq.custom_typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.errors.html">ifxdaq.errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.fileio.html">ifxdaq.fileio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager.html">ifxdaq.manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager_config.html">ifxdaq.manager_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.process.html">ifxdaq.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.record.html">ifxdaq.record</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ifxdaq.sensor.html">ifxdaq.sensor</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.sensor.abc.html">ifxdaq.sensor.abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.sensor.camera_cvb.html">ifxdaq.sensor.camera_cvb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.sensor.camera_irs.html">ifxdaq.sensor.camera_irs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.sensor.camera_ocv.html">ifxdaq.sensor.camera_ocv</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ifxdaq.sensor.radar_ifx</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.thread.html">ifxdaq.thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.utils.html">ifxdaq.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.worker.html">ifxdaq.worker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../file_format.html">File format reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ifxdaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API reference</a> &raquo;</li>
+          <li><a href="ifxdaq.html">ifxdaq</a> &raquo;</li>
+          <li><a href="ifxdaq.sensor.html">ifxdaq.sensor</a> &raquo;</li>
+      <li>ifxdaq.sensor.radar_ifx</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/ifxdaq.sensor.radar_ifx.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ifxdaq.sensor.radar_ifx">
+<span id="ifxdaq-sensor-radar-ifx"></span><h1>ifxdaq.sensor.radar_ifx<a class="headerlink" href="#module-ifxdaq.sensor.radar_ifx" title="Permalink to this headline"></a></h1>
+<p>This module contains the implementation to access Infineon 60 GHz radars.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We require firmware version &gt;= 2.5.0. Available in the  <a class="reference external" href="https://confluencewikiprod.intra.infineon.com/display/DP/Infineon+Toolbox+Home">Infineon Toolbox</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To enable the MIMO mode, set <cite>mimo_mode</cite> in the radar configuration file to <cite>tdm</cite>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On UNIX: If your radar device is connected and ready (blinking LED), but not found by
+<code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code>, make sure that you can access the device file <code class="docutils literal notranslate"><span class="pre">/dev/ttyAMCx</span></code> (<code class="docutils literal notranslate"><span class="pre">x</span></code> is a
+number specific to you computer). Additionally, make sure that your current user is in the
+group <code class="docutils literal notranslate"><span class="pre">dialout</span></code>. You can check the groups of your current user using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ groups
+</pre></div>
+</div>
+<p>To add your user to the group dialout, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo usermod -a -G dialout username
+</pre></div>
+</div>
+<p>and replace <code class="docutils literal notranslate"><span class="pre">username</span></code> by your actual user name. Afterwards a restart might be required.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../file_format/radar.html#radar"><span class="std std-ref">Radar data (radar.npy)</span></a>: Radar data file format.</p></li>
+<li><p><a class="reference internal" href="../file_format/temperature.html#temperature"><span class="std std-ref">Temperature data (temperature.npy)</span></a>: Temperature data file format.</p></li>
+<li><p><a class="reference external" href="https://bitbucket.vih.infineon.com/projects/MMWSW/repos/rdk/browse">RDK</a>: Underlying driver library.</p></li>
+</ul>
+</div>
+<p class="rubric">Examples</p>
+<p>Import:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ifxdaq.sensor.radar_ifx</span> <span class="kn">import</span> <span class="n">RadarIfxAvian</span>
+</pre></div>
+</div>
+<p>Discover devices:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">RadarIfxAvian</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span> 
+<span class="go">[...]</span>
+</pre></div>
+</div>
+<p>Open radar with default configuration (A config file, which can be modified is created):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config_file</span> <span class="o">=</span> <span class="n">RadarIfxAvian</span><span class="o">.</span><span class="n">create_default_config_file</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">RadarIfxAvian</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">radar</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">radar</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+<span class="go">[...]</span>
+</pre></div>
+</div>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian" title="ifxdaq.sensor.radar_ifx.RadarIfxAvian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RadarIfxAvian</span></code></a>(config_file[, device_id])</p></td>
+<td><p>Wrapper class for Infineon 60 GHz radar devices.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.sensor.radar_ifx.</span></span><span class="sig-name descname"><span class="pre">RadarIfxAvian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ifxdaq.sensor.abc.SensorABC</span></code></p>
+<p>Wrapper class for Infineon 60 GHz radar devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_file</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – Path to configuration file to use the camera. (.json)</p></li>
+<li><p><strong>device_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – If given, the sensor which matches the ID will be accessed.
+Otherwise, a random connected device will be accessed.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This device returns a <code class="docutils literal notranslate"><span class="pre">Dict</span></code> that contains a <a class="reference internal" href="ifxdaq.sensor.abc.html#ifxdaq.sensor.abc.Frame" title="ifxdaq.sensor.abc.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></a> for those sensors:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">radar</span></code>: Radar data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">temperature</span></code>: Temperature data.</p></li>
+</ul>
+</div></blockquote>
+<p>Be aware, that frames can contain only a subset of data for the above mentioned sensor types, because the
+sensors are not physically aligned and return asynchronously data. If a sensor has no new data, <code class="docutils literal notranslate"><span class="pre">None</span></code> will be
+returned instead. Ensure in your code that you implement corresponding checks.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.close" title="Permalink to this definition"></a></dt>
+<dd><p>Close the connected sensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.create_default_config_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_default_config_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.create_default_config_file" title="Permalink to this definition"></a></dt>
+<dd><p>Create a default configuration file for the sensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dst</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – Destination directory of the created configuration.</p></li>
+<li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Used as file stem (<cite>string.suffix</cite>). If not specified the
+sensor class name is used as stem (<cite>sensor_class.suffix</cite>).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If default configuration file could not be found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Path of the created configuration file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.discover">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.discover" title="Permalink to this definition"></a></dt>
+<dd><p>Discover connected Ifx Radar devices.</p>
+<p>Exemplary device identifier: <cite>00000000-0000-4158-3130-333539393630</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of device identifiers for all connected devices.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.extract_frame_format">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_frame_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.extract_frame_format" title="Permalink to this definition"></a></dt>
+<dd><p>Extract the frame format for the radar stream from a configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config_file</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – Path to the config file to extract the frame format.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="ifxdaq.sensor.abc.html#ifxdaq.sensor.abc.FrameFormat" title="ifxdaq.sensor.abc.FrameFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">FrameFormat</span></code></a>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The frame format with attributes like <cite>shape</cite>, <cite>dtype</cite> &amp; <cite>fps</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.parse_config_from_file">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_config_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.parse_config_from_file" title="Permalink to this definition"></a></dt>
+<dd><p>Parse a configuration file according to RDK schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>config</em>) – The configuration file.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="ifxdaq.errors.html#ifxdaq.errors.SensorConfigurationError" title="ifxdaq.errors.SensorConfigurationError"><strong>SensorConfigurationError</strong></a> – If an invalid <cite>config_file</cite> was passed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The parsed configuration.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, only the <cite>fmcw_single_shape</cite> is supported.
+We do not read the UUIDs, because this is not required.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.LOG_TEMPERATURE_S">
+<span class="sig-name descname"><span class="pre">LOG_TEMPERATURE_S</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.LOG_TEMPERATURE_S" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.MAX_RETRIES">
+<span class="sig-name descname"><span class="pre">MAX_RETRIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.MAX_RETRIES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.TIMEOUT_MS">
+<span class="sig-name descname"><span class="pre">TIMEOUT_MS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1000</span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.TIMEOUT_MS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.config_file">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pathlib.Path</span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.config_file" title="Permalink to this definition"></a></dt>
+<dd><p>Configuration file of the sensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.config_file_suffix">
+<span class="sig-name descname"><span class="pre">config_file_suffix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'.json'</span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.config_file_suffix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ifxdaq.sensor.abc.html#ifxdaq.sensor.abc.Frame" title="ifxdaq.sensor.abc.Frame"><span class="pre">ifxdaq.sensor.abc.Frame</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.data" title="Permalink to this definition"></a></dt>
+<dd><p>Current data frame incl. timestamp.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="ifxdaq.sensor.abc.html#ifxdaq.sensor.abc.Frame" title="ifxdaq.sensor.abc.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.device_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">device_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.device_id" title="Permalink to this definition"></a></dt>
+<dd><p>The sensor’s identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.frame_format">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_format</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ifxdaq.sensor.abc.html#ifxdaq.sensor.abc.FrameFormat" title="ifxdaq.sensor.abc.FrameFormat"><span class="pre">ifxdaq.sensor.abc.FrameFormat</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.frame_format" title="Permalink to this definition"></a></dt>
+<dd><p>The sensor’s frame format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="ifxdaq.sensor.abc.html#ifxdaq.sensor.abc.FrameFormat" title="ifxdaq.sensor.abc.FrameFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">FrameFormat</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ifxdaq.sensor.radar_ifx.RadarIfxAvian.meta_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">meta_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ifxdaq.sensor.radar_ifx.RadarIfxAvian.meta_data" title="Permalink to this definition"></a></dt>
+<dd><p>The device’s meta data (e.g. driver version).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ifxdaq.sensor.camera_ocv.html" class="btn btn-neutral float-left" title="ifxdaq.sensor.camera_ocv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ifxdaq.thread.html" class="btn btn-neutral float-right" title="ifxdaq.thread" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright restricted | Infineon Technologies. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

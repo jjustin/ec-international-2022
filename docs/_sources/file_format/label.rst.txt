@@ -1,0 +1,63 @@
+.. _label:
+
+Label (``label.json``)
+=======================
+**Format**
+
+Labels are stored as ``label.json`` files.
+
+- file type: ``.json`` (`json@Wikipedia <https://en.wikipedia.org/wiki/JSON>`_)
+- file hierarchy: We build a hierarchy of nested lists. The outer list corresponds to frames. The inner list
+  corresponds to detections within a single frame. All detections of a frame are within a single line. This allows our
+  implementation to stream data without loading the whole file into memory.
+
+    .. code-block::
+
+        [
+        [{}],               <- Frame with 1 detection
+        [{}, {}],           <- Frame with 2 detections
+        [],                 <- Frame with 0 detections
+        [{}, {}, {}],       <- Frame with 3 detections
+        ]
+
+- label fields (the available keys depend strongly on the executed stages):
+
+    .. table::
+        :widths: 15 10 10 65
+
+        +------------------------------------------------------------+-----------------------+-------------+--------------------------------------------------------------------------+
+        | Stage                                                      | Key                   | Type        | Description                                                              |
+        +============================================================+=======================+=============+==========================================================================+
+        | :ref:`ai/stages/detection:detection stage`                 | ``class``             | str         | Class name.                                                              |
+        |                                                            +-----------------------+-------------+--------------------------------------------------------------------------+
+        |                                                            | ``confidence``        | float       | Confidence score of the neural network.                                  |
+        |                                                            +-----------------------+-------------+--------------------------------------------------------------------------+
+        |                                                            | ``bbox``              | list[int]   | Bounding box around the detection (top-left, bottom-right format):       |
+        |                                                            |                       |             | ``[x0, y0, x1, y1]``                                                     |
+        |                                                            +-----------------------+-------------+--------------------------------------------------------------------------+
+        |                                                            | ``keypoints``         | list[int]   | Keypoints of the detected person *(COCO format)*                         |
+        |                                                            |                       |             | ``[num_keypoints, x,y,score]``                                           |
+        |                                                            |                       |             | *(Only available if a keypoint model was used)*                          |
+        |                                                            +-----------------------+-------------+--------------------------------------------------------------------------+
+        |                                                            | ``segmentation``      | list[int]   | List of vertices around the object: ``[x0, y0, x1, y1, x2, y2, ...]``    |
+        |                                                            |                       |             | *(Only available if a segmentation model was used)*                      |
+        +------------------------------------------------------------+-----------------------+-------------+--------------------------------------------------------------------------+
+        | :ref:`ai/stages/tracking:tracking stage`                   | ``id``                | int         | Object ID which is preserved over time.                                  |
+        |                                                            +-----------------------+-------------+--------------------------------------------------------------------------+
+        |                                                            | ``track_state``       | str         | State of the tracker.                                                    |
+        +------------------------------------------------------------+-----------------------+-------------+--------------------------------------------------------------------------+
+        | :ref:`ai/stages/world_coordinates:World coordinates stage` | ``world_coordinates`` | list[float] | 3D position of the object. ``[x, y, z]``                                 |
+        |                                                            |                       |             | *(Only available with depth data)*                                       |
+        |                                                            +-----------------------+-------------+--------------------------------------------------------------------------+
+        |                                                            | ``world_keypoints``   | list[float] | 3D coordinates for all keypoint as flattened list.                       |
+        |                                                            |                       |             | ``[x0, y0, z0, x1, y1, z1, ... ]``                                       |
+        |                                                            |                       |             | *(Only available with depth data and keypoints)*                         |
+        +------------------------------------------------------------+-----------------------+-------------+--------------------------------------------------------------------------+
+
+
+
+**Available libraries**
+
+- ifxdaq: :class:`~ifxdaq.fileio.json.ReaderJson`
+- Python: built-in json support (no streaming)
+- Matlab: built-in json support (no streaming)

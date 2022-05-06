@@ -1,0 +1,30 @@
+ifxdaq.fileio.abc
+=================
+
+.. automodule:: ifxdaq.fileio.abc
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ReaderABC
+      RecorderABC
+   
+   
+
+   
+   
+   
+
+
+

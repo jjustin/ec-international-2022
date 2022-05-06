@@ -1,0 +1,32 @@
+ifxdaq.ai.world\_coordinates
+============================
+
+.. automodule:: ifxdaq.ai.world_coordinates
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   ifxdaq.ai.world_coordinates.depth
+   ifxdaq.ai.world_coordinates.stage
+

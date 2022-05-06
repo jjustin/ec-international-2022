@@ -1,0 +1,29 @@
+ifxdaq.ai.detector.yolo
+=======================
+
+.. automodule:: ifxdaq.ai.detector.yolo
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      YOLODetection
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,73 @@
+Basic workflow
+^^^^^^^^^^^^^^
+
+This sections aims at users who want to collect data from one or more sensors and create the corresponding labels based
+on the recorded camera data.
+Before we can start, make sure that you installed the ``ifxdaq``-package properly following the
+:ref:`installation guide <install:Installation>`.
+After you activated your virtual environment, you are ready to start recording data.
+
+
+Recording
+~~~~~~~~~
+
+Start the :ref:`recorder:Recorder` by entering ``ifxdaq recorder`` in your terminal:
+
+.. code:: bash
+
+    ifxdaq recorder
+
+This will open the recorder application where you can press the discover button to find supported sensors that can be
+recorded. Actually, the recorder should be self-explanatory. For more details look at the
+:ref:`recorder chapter <recorder:Recorder>`.
+
+.. note::
+    Web-cams are disabled by default. If you want to record data from your web-cam, add ``--webcam`` to the recorder
+    command.
+
+.. image:: ../media/recorder.jpg
+    :width: 800
+
+
+Labeling
+~~~~~~~~
+
+In this tutorial we are using the default pipeline. The pipeline identifies persons inside the camera recording, tracks
+them and does some further processing to clean up the results. If you want to use a different pipeline or want to
+configure your own pipeline, please have a look at the dedicated :ref:`labeling chapter <label:Labeling>`.
+
+.. code:: bash
+
+    ifxdaq label -p human_tracking recordings/recording_2022_01_24_13_36_37/CamIntelRealSense_00
+
+.. note::
+
+    If you want to process multiple recordings at once, you can also use wildcards. Note that wildcards are individual for
+    each terminal. The example below shows an example which should work in most Linux environments:
+
+    .. code:: bash
+
+        ifxdaq label -p human_tracking recordings/**/Cam*/
+
+
+Using labels
+~~~~~~~~~~~~
+
+After the labeling process is finished, you can use the generated labels. The label content my vary slightly depending
+on the chosen pipeline. We provide a Python module, which automatically loads the labels and returns the detections
+in a Pandas data frame. Feel free to use this data frame as a starting point for your applications:
+
+.. code:: python
+
+    import matplotlib.pyplot as plt
+    from pathlib import Path
+
+    from ifxdaq.ai.label import LabelLoader
+    from ifxdaq.ai.visualization.render import visualize_bbox, visualize_world
+
+    df_labels = LabelLoader.to_dataframe(Path('recordings/recording_2022_01_24_13_36_37/Labels_00'))
+    df_labels.head()
+    visualize_bbox(df_labels, (480, 848))
+    plt.show()
+    visualize_world(df_labels)
+    plt.show()
