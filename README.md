@@ -35,6 +35,7 @@ pip install lsq-ellipse circle_fit
 
 ## Hackathon Material
 * [Challenge Introduction Slides](./challenge_introduction.pdf)
+* [Vital Sensing Paper](./vital_sensing_paper.pdf)
 
 ## Documentation Links
 * [Infineon Radar Development Kit](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradarsdk)
