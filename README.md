@@ -60,4 +60,4 @@ pip install lsq-ellipse circle_fit
 **Julian** (Senior Embedded Systems Engineer)
 
 ### How to reach us?
-[![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or talk to Julian :)
