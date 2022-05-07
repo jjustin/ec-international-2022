@@ -1,5 +1,8 @@
 # Project Submission
 
+## How to score?
+Check the [challenge introduction](../challenge_introduction.pdf) document for details.
+
 ## What needs to be included in the submission?
 
 ### Pitch
@@ -9,7 +12,7 @@ Your pitch video (max. 5 min, optional with demo of results).
 Your code in a *reconstructible* way, meaning we want to verify that your code is running and your results are reproducible. Please provide a step-by-step guide how to get your code running (including dependencies, software versions, etc.). You can also include that in the Application Note (see below).
 
 ### Documentation
-As in every professional project you have to document your results so others can understand what you did and how they can reproduce it. At Infineon we use Application Notes for that. Here you can find the template which you should use as basis for your Application Note.
+As in every professional project you have to document your results so others can understand what you did and how they can reproduce it. At Infineon we use Application Notes for that. In this folder you can find the template which you should use as basis for your Application Note (`Infineon-AppNote-Template.xxx`).
 
 ### Feedback (Bonus)
 Please provide feedback for us. What did you like about the challenge? What should be improved? What would you do differently next time? This is optional, but can get you up to 10 bonus points.
