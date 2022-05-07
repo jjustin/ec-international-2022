@@ -7,6 +7,8 @@
 
 :information_source: **Next Q&A session: 14:30 at Humboldt-Haus.**
 
+:information_source: **Check this page from time to time for new useful information.** Hint: Take a look in the commit history to see what changed.
+
 ## Getting Started
 
 **TL;DR:** This quick guide explains how to aquire data from the Infineon radar board with Python.
@@ -43,10 +45,11 @@ pip install lsq-ellipse circle_fit
 * [Challenge Introduction Slides](./challenge_introduction.pdf)
 * [Vital Sensing Paper](./vital_sensing_paper.pdf)
 
-## Documentation Links
+## Useful Links
 * [Infineon Radar Development Kit](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradarsdk)
 * [DEMO BGT60TR13C Radar Demo Board](https://www.infineon.com/cms/en/product/evaluation-boards/demo-bgt60tr13c/)
 * [Infineon BGT60TR13C Radar Chip](https://www.infineon.com/cms/en/product/sensor/radar-sensors/radar-sensors-for-iot/60ghz-radar/bgt60tr13c/)
+* [Infineon Radar GUI](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradargui)
 
 ## FAQs
 
