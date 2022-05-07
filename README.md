@@ -65,6 +65,9 @@ The range index is a unitless number indicating at which distance the target is 
 ### What is the Range Resolution?
 The Range Resolution can be calculated from the radar settings. As for our problem statement the radar settings are static the Range Resolution can be assumed as 7.5cm.
 
+### What does Sample mean?
+In the context of raw radar data, a Sample is the basic smallest building block that is transmitted. The Frames constitute of one or more Chirps, the Chirps are made of Samples. These Samples are coming directly from the ADC.
+
 ## Infineon Team
 
 <img src="./img/anja.jfif" alt="Anja" height="150"/>
