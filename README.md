@@ -48,10 +48,10 @@ pip install lsq-ellipse circle_fit
 
 ## FAQs
 
-### What is Range Map?
+### What is a Range Map?
 The range map is the spectrum when using a single transmit frequency. The `x` value shows the distance between the radar sensor and the target. The `y` value shows the magnitude of the reflected signal.
 
-### Range Doppler Map
+### What is a Range Doppler Map?
 The range map is the spectrum when using varying transmit frequencies. The `x` value shows the distance between the radar sensor and the target. The `y` value shows the velocity of the target.
 
 ### What is a Chirp?
@@ -60,7 +60,7 @@ A Chirp is a transmitted signal with varying frequency.
 ### What is the Range Index?
 The range index is a unitless number indicating at which distance the target is available. The physical distance can be calculated as `range_index * range_resolution`.
 
-### Range Resolution
+### What is the Range Resolution?
 The Range Resolution can be calculated from the radar settings. As for our problem statement the radar settings are static the Range Resolution can be assumed as 7.5cm.
 
 ## Infineon Team
