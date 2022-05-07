@@ -5,9 +5,7 @@
 
 [![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-:information_source: **Next Q&A session: 14:30 at Humboldt-Haus.**
-
-:information_source: **Check this page from time to time for new useful information.** Hint: Take a look in the commit history to see what changed.
+:information_source: **Important:** Please look [here](./submission/README.md) for all information regarding submission of your project.
 
 ## Getting Started
 
