@@ -5,6 +5,8 @@
 
 [![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+:information_source: **Next Q&A session: 14:30 at Humboldt-Haus.**
+
 ## Getting Started
 
 **TL;DR:** This quick guide explains how to aquire data from the Infineon radar board with Python.
