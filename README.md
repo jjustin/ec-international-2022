@@ -1,15 +1,11 @@
 <img src="./img/infineon_logo.png" alt="Infineon Logo" height="50"/>
 <img src="./img/xensiv_logo.png" alt="XENSIV Logo" height="50"/>
 
-# Vital Sensing with Radar and ML (Hackathon)
-
-[![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-:information_source: **Important:** Please look [here](./submission/README.md) for all information regarding submission of your project.
+# People Counting with Radar and ML (Hackathon)
 
 ## Getting Started
 
-**TL;DR:** This quick guide explains how to aquire data from the Infineon radar board with Python.
+**TL;DR:** This quick guide explains how to acquire data from the Infineon radar board with Python.
 
 Please start by installing [Python](https://www.python.org/) and [Pip](https://pypi.org/project/pip/). We also recommend to install [Jupyter](https://jupyter.org/) for running the examples.
 
@@ -28,7 +24,7 @@ pip install ifxdaq-3.0.1-py3-none-xxx.whl
 
 :information_source: Make sure to replace _xxx_ by the correct filename according to your operating system and system architecture (see *.whl files in the repo for possible options).
 
-**Now your system is ready to aquire radar data!**
+**Now your system is ready to acquire radar data!**
 
 Since some processing steps are recommended for the radar data you should install the following dependencies:
 
@@ -41,13 +37,14 @@ pip install lsq-ellipse circle_fit
 
 ## Hackathon Material
 * [Challenge Introduction Slides](./challenge_introduction.pdf)
-* [Vital Sensing Paper](./vital_sensing_paper.pdf)
+* [People Counting Paper](./people_counting_paper.pdf)
 
 ## Useful Links
+* [Radar Basics](./radar_basics.pdf)
 * [Infineon Radar Development Kit](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradarsdk)
 * [DEMO BGT60TR13C Radar Demo Board](https://www.infineon.com/cms/en/product/evaluation-boards/demo-bgt60tr13c/)
 * [Infineon BGT60TR13C Radar Chip](https://www.infineon.com/cms/en/product/sensor/radar-sensors/radar-sensors-for-iot/60ghz-radar/bgt60tr13c/)
-* [Infineon Radar GUI](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradargui)
+* [Infineon Radar Fusion GUI](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.radarfusiongui)
 
 ## FAQs
 
@@ -88,4 +85,4 @@ In the context of raw radar data, a Sample is the basic smallest building block 
 **Julian** (Senior Embedded Systems Engineer)
 
 ### How to reach us?
-[![Gitter](https://badges.gitter.im/ifx-eestec-hack/community.svg)](https://gitter.im/ifx-eestec-hack/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or talk to Julian :)
+Please [open an issue]([https://github.com/Infineon/hackathon/issues) in this repository to ask your questions or talk to someone at the location :)
