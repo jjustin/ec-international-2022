@@ -1,0 +1,15 @@
+{
+  "ifxdaq_version": "3.0.1",
+  "username": "janez",
+  "hostname": "DESKTOP-78UL3NU",
+  "os": "Windows",
+  "os_release": "10",
+  "os_version": "10.0.22000",
+  "machine": "AMD64",
+  "python_version": "3.8.10",
+  "python_implementation": "CPython",
+  "torch_version": "1.11.0+cu113",
+  "torchvision_version": "0.12.0+cu113",
+  "cuda": "True",
+  "date_captured": "2022-05-25T18:52:13.055041"
+}

@@ -1,0 +1,22 @@
+{
+    "device_config": {
+        "fmcw_single_shape": {
+            "rx_antennas": [
+                1
+            ],
+            "tx_antennas": [
+                1
+            ],
+            "tx_power_level": 31,
+            "if_gain_dB": 48,
+            "start_frequency_Hz": 60.5e9,
+            "end_frequency_Hz": 61.5e9,
+            "num_chirps_per_frame": 64,
+            "num_samples_per_chirp": 128,
+            "chirp_repetition_time_s": 391.55e-6,
+            "frame_repetition_time_s": 100e-3,
+            "sample_rate_Hz": 2e6,
+            "mimo_mode": "off"
+        }
+    }
+}

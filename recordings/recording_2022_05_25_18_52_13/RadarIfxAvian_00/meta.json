@@ -1,0 +1,15 @@
+{
+  "uuid": "00323153-4e46-3243-3039-303131303335",
+  "sdk_version": "v3.2.0+92.a81b2f3db",
+  "firmware_version": "2.5.3",
+  "adc_resolution": 12,
+  "shield_type": 512,
+  "description": "BGT60TR13C FMCW Radar Sensor",
+  "min_rf_frequency_Hz": 58000000000,
+  "max_rf_frequency_Hz": 63500000000,
+  "num_tx_antennas": 1,
+  "num_rx_antennas": 3,
+  "max_tx_power": 31,
+  "num_temp_sensors": 1,
+  "interleaved_rx": 1
+}
