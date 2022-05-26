@@ -44,6 +44,7 @@ class PenneModel(nn.Module):
 
 
 class AnelliModel(nn.Module):
+    HISTORY_LEN = 10
 
     def __init__(self):
         super(AnelliModel, self).__init__()
@@ -65,10 +66,10 @@ class AnelliModel(nn.Module):
 
         self.linear = nn.Sequential(
 
-            nn.Linear(360, 180, bias=False),
+            nn.Linear(360+AnelliModel.HISTORY_LEN, 200, bias=False),
             nn.LeakyReLU(0.2, inplace=True),
 
-            nn.Linear(180, 90, bias=False),
+            nn.Linear(200, 90, bias=False),
             nn.LeakyReLU(0.2, inplace=True),
 
             nn.Linear(90, 45, bias=False),
@@ -80,8 +81,8 @@ class AnelliModel(nn.Module):
         )
 
     def forward(self, input1, input2):
-        conv = self.convolution(input)
-        combined = torch.cat([conv, input1])
+        conv = self.convolution(input1)
+        combined = torch.cat([conv, input2], dim=1)
         return self.linear(combined)
 
 
@@ -89,25 +90,31 @@ class FettuccineModel(nn.Module):
 
     def __init__(self):
         super(FettuccineModel, self).__init__()
-        # 1 input image channel, 6 output channels, 5x5 square convolution
-        # kernel
-        self.conv1 = nn.Conv2d(3, 6, 5)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        # an affine operation: y = Wx + b
-        self.fc1 = nn.Linear(16 * 5 * 5, 120)  # 5*5 from image dimension
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 10)
+        self.main = nn.Sequential(
 
-    def forward(self, x):
-        # Max pooling over a (2, 2) window
-        x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
-        # If the size is a square, you can specify with a single number
-        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
-        x = torch.flatten(x, 1)  # flatten all dimensions except the batch dimension
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x
+            nn.Conv2d(3, 20, 5, stride=2, padding=1, bias=False),
+            nn.ELU(),
+            nn.MaxPool2d(2, stride=2),
+
+            nn.Conv2d(20, 64, 5, stride=3, dilation=1, padding=3, bias=False),
+            nn.ReLU(),
+            nn.MaxPool2d(2, stride=2),
+
+            nn.Conv2d(64, 32, 3, stride=2, padding=1, bias=False),
+            nn.ReLU(),
+            nn.MaxPool2d(2, stride=2),
+
+            nn.Flatten(),
+
+            nn.Linear(32, 16, bias=False),
+            nn.ReLU(),
+
+            nn.Linear(16, 4, bias=False),
+            nn.LogSoftmax(dim=1)
+        )
+
+    def forward(self, input):
+        return self.main(input)
 
 
 class RotiniModel(nn.Module):
@@ -125,6 +132,62 @@ class RotiniModel(nn.Module):
             nn.Flatten(),
 
             nn.Linear((32 * 32 * 8), 4, bias=False),
+            nn.Sigmoid()
+        )
+
+    def forward(self, input):
+        return self.main(input)
+
+
+class SpaghettiModel(nn.Module):
+
+    def __init__(self):
+        super(SpaghettiModel, self).__init__()
+        self.main = nn.Sequential(
+
+            nn.MaxPool2d(3, 2),
+            nn.Conv2d(3, 8, 5, stride=2, padding=1, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Conv2d(8, 16, 3, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(16),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Conv2d(16, 32, 3, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(32),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Conv2d(32, 64, 2, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(64),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Conv2d(64, 128, 2, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(128),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Flatten(),
+
+            nn.Linear(512, 256, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Linear(256, 128, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Linear(128, 64, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Linear(64, 32, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Linear(32, 16, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Linear(16, 8, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            nn.Linear(8, 4, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+
             nn.Sigmoid()
         )
 
