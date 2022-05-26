@@ -80,3 +80,31 @@ class AnelliModel(nn.Module):
         conv = self.convolution(input)
         combined = torch.cat([conv, input1])
         return self.linear(combined)
+
+
+class FettuccineModel(nn.Module):
+
+    def __init__(self):
+        super(FettuccineModel, self).__init__()
+        self.main = nn.Sequential(
+
+            nn.Conv2d(3, 24, 3, stride=1, padding=1, bias=False),
+            nn.ReLU(),
+
+            nn.Conv2d(24, 64, 8, stride=2, padding=4, bias=False),
+            nn.ReLU(),
+
+            nn.Conv2d(64, 128, 4, stride=2, padding=4, bias=False),
+            nn.ReLU(),
+
+            nn.MaxPool2d(2, stride=2),
+
+            nn.Conv2d(64, 128, 4, stride=2, padding=4, bias=False),
+            nn.ReLU(),
+
+            nn.Linear(64, 4, bias=False),
+            nn.Sigmoid()
+        )
+
+    def forward(self, input):
+        return self.main(input)
