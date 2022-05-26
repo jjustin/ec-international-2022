@@ -42,10 +42,8 @@ class SensorDataset(Dataset):
 
             processed_data = processing.processing_rangeDopplerData(
                 data[start_frame:end_frame])
-            processed_data = np.abs(processed_data)
 
-            processed_data[:, :, 32:34, :] = 0  # Take out high strip
-            processed_data *= 1.0 / processed_data.max()  # Normalize
+            processed_data = preprocess_input(processed_data)
 
             # iterate frames
             for f in processed_data:
@@ -57,6 +55,12 @@ class SensorDataset(Dataset):
     def __getitem__(self, idx):
         return self.samples[idx]
 
+
+def preprocess_input(input):
+    input = np.abs(input)
+    input[:, :, 32:34, :] = 0  # Take out high strip
+    input *= 1.0 / input.max()  # Normalize
+    return input
 
 if __name__ == '__main__':
     dataset = SensorDataset()
