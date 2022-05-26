@@ -17,3 +17,6 @@ docs/doxyoutput
 .ipynb_checkpoints/
 __pycache__/
 recordings/
+submission/code/files/
+.idea/
+submission/code/datasets/
