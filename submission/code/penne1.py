@@ -1,14 +1,10 @@
-import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.nn.functional as F
 
 
-class Net(nn.Module):
+class PenneModel(nn.Module):
 
     def __init__(self):
-        super(Net, self).__init__()
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+        super(PenneModel, self).__init__()
         self.main = nn.Sequential(
 
             nn.Conv2d(3, 10, 4, stride=2, padding=1, bias=False),

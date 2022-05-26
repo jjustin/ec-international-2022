@@ -9,12 +9,22 @@ class SensorDataset(Dataset):
     def __init__(self):
         self.samples = []
 
-        recording_list = [
+        bolognese1 = [
             {'title': 'recording_2022_05_25_11_55_19', 'start': 200, 'end': 500, 'label': 0},  # 0 people
             {'title': 'recording_2022_05_25_11_46_26', 'start': 200, 'end': 500, 'label': 1},  # 1 person
             {'title': 'recording_2022_05_25_11_47_20', 'start': 200, 'end': 500, 'label': 2},  # 2 people
             {'title': 'recording_2022_05_25_11_48_56', 'start': 200, 'end': 500, 'label': 3},  # 3 people
         ]
+
+        pesto1 = [
+            {'title': 'recording_2022_05_25_19_06_11', 'start': 50, 'end': 1500, 'label': 0},  # 0 people
+            {'title': 'recording_2022_05_25_19_07_53', 'start': 20, 'end': 2700, 'label': 1},  # 1 person
+            {'title': 'recording_2022_05_25_19_10_22', 'start': 20, 'end': 3300, 'label': 2},  # 2 people
+            {'title': 'recording_2022_05_25_19_13_55', 'start': 110, 'end': 3300, 'label': 3},  # 3 people
+        ]
+
+        # pick the dataset
+        recording_list = pesto1
 
         for recording in recording_list:
             file_name = f'../../recordings/{recording["title"]}/RadarIfxAvian_00/radar.npy'
@@ -44,4 +54,5 @@ if __name__ == '__main__':
     test_size = len(dataset) - train_size
     train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
 
-    torch.save(dataset)
+    # torch.save(dataset, 'datasets/bolognese1.pth')
+    torch.save(dataset, 'datasets/pesto1.pth')
