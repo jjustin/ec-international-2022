@@ -1,4 +1,5 @@
 import torch
+from scipy.ndimage import gaussian_filter
 from torch.utils.data import Dataset
 import numpy as np
 import processing
@@ -6,27 +7,28 @@ from torch.utils.data import random_split
 
 bolognese1 = [
     {'title': 'recording_2022_05_25_11_55_19',
-        'start': 200, 'end': 500, 'label': 0},  # 0 people
+     'start': 200, 'end': 500, 'label': 0},  # 0 people
     {'title': 'recording_2022_05_25_11_46_26',
-        'start': 200, 'end': 500, 'label': 1},  # 1 person
+     'start': 200, 'end': 500, 'label': 1},  # 1 person
     {'title': 'recording_2022_05_25_11_47_20',
-        'start': 200, 'end': 500, 'label': 2},  # 2 people
+     'start': 200, 'end': 500, 'label': 2},  # 2 people
     {'title': 'recording_2022_05_25_11_48_56',
-        'start': 200, 'end': 500, 'label': 3},  # 3 people
+     'start': 200, 'end': 500, 'label': 3},  # 3 people
 ]
 
 pesto1 = [
     {'title': 'recording_2022_05_25_19_06_11',
-        'start': 50, 'end': 1500, 'label': 0},  # 0 people
+     'start': 50, 'end': 1500, 'label': 0},  # 0 people
     {'title': 'recording_2022_05_25_19_07_53',
-        'start': 20, 'end': 2700, 'label': 1},  # 1 person
+     'start': 20, 'end': 2700, 'label': 1},  # 1 person
     {'title': 'recording_2022_05_25_19_10_22',
-        'start': 20, 'end': 3300, 'label': 2},  # 2 people
+     'start': 20, 'end': 3300, 'label': 2},  # 2 people
     {'title': 'recording_2022_05_25_19_13_55',
-        'start': 110, 'end': 3300, 'label': 3},  # 3 people
+     'start': 110, 'end': 3300, 'label': 3},  # 3 people
 ]
 
 bolognese1EPesto1 = bolognese1 + pesto1
+
 
 class SensorDataset(Dataset):
     def __init__(self, recording_list):
@@ -40,8 +42,7 @@ class SensorDataset(Dataset):
             label = torch.tensor([0, 0, 0, 0])
             label[labelix] = 1
 
-            processed_data = processing.processing_rangeDopplerData(
-                data[start_frame:end_frame])
+            processed_data = processing.processing_rangeDopplerData(data[start_frame:end_frame])
 
             processed_data = preprocess_input(processed_data)
 
@@ -56,11 +57,20 @@ class SensorDataset(Dataset):
         return self.samples[idx]
 
 
-def preprocess_input(input):
-    input = np.abs(input)
-    input[:, :, 32:34, :] = 0  # Take out high strip
-    input *= 1.0 / input.max()  # Normalize
-    return input
+def preprocess_input(processed_data):
+    processed_data = np.abs(processed_data)
+
+    # processed_data[:, :, 32:34, :] = 0  # Remove the middle band (noise?)
+
+    for i in range(len(processed_data)):
+        for j in range(len(processed_data[i])):
+            processed_data[i, j] -= processed_data[i, j].mean()  # subtract the mean
+            # processed_data[i, j] = gaussian_filter(processed_data[i, j], (1, 1))  # Gaussian blur
+
+    processed_data[:, :, :, 45:] = 0  # Remove far away objects
+    processed_data *= 1.0 / processed_data.max()  # Normalize
+    return processed_data
+
 
 if __name__ == '__main__':
     dataset = SensorDataset()
