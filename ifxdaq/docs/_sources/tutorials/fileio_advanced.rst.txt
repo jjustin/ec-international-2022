@@ -1,0 +1,76 @@
+Recorder & Reader (advanced) - :mod:`ifxdaq.fileio`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table:: Available data formats
+    :header-rows: 1
+
+    * - Data format
+      - Package
+      - Recorder
+      - Reader
+    * - ``.npy``
+      - :mod:`ifxdaq.fileio.npy`
+      - :class:`~ifxdaq.fileio.npy.RecorderNpy`
+      - :class:`~ifxdaq.fileio.npy.ReaderNpy`
+    * - ``.mp4``
+      - :mod:`ifxdaq.fileio.mp4`
+      - :class:`~ifxdaq.fileio.mp4.RecorderMp4`
+      - :class:`~ifxdaq.fileio.mp4.ReaderMp4`
+    * - ``.json``
+      - :mod:`ifxdaq.fileio.json`
+      - :class:`~ifxdaq.fileio.json.RecorderJson`
+      - :class:`~ifxdaq.fileio.json.ReaderJson`
+
+
+.. note::
+    We will use for our examples always Numpy Recorder & Reader :mod:`~ifxdaq.fileio.npy` - if
+    you want to try the examples with another file format, you can simply exchange them.
+
+    All examples are completely self-contained. You can copy & insert them directly into your code file / Python
+    terminal / Jupyter notebook and start experimenting.
+
+
+Write data
+~~~~~~~~~~
+
+.. Important::
+
+    If you want to record data that is compliant to the data recorded with the ``ifxdaq`` :ref:`recorder:Recorder`, use
+    :class:`ifxdaq.record.DataRecorder`. :class:`ifxdaq.record.DataRecorder` is a more abstract class that records not
+    only data and timestamps, but also meta data and sensor configuration.
+
+We write data with our recorder classes frame by frame to the disc. This saves not only the data, but also the
+corresponding timestamps.
+
+.. code:: python
+
+    import numpy as np
+    from ifxdaq.sensor.abc import Frame, FrameFormat
+    # Dummy frames to write
+    frames = [Frame(t, np.random.randn(3,64,128).astype("uint16")) for t in range(10)]
+    frame_format = FrameFormat(dtype=np.dtype("uint16"), fps=10.0, shape=(3,64,128))
+
+    from ifxdaq.fileio.npy import RecorderNpy
+
+    with RecorderNpy("demo.npy", frame_format) as rec:
+        for frame in frames:
+            rec.write(frame)
+
+
+
+Read data
+~~~~~~~~~
+
+Read the data (incl. timestamps) of one sensor from the disc.
+
+.. code:: python
+
+    from ifxdaq.fileio.npy import ReaderNpy
+
+    with ReaderNpy("demo.npy") as read:
+        for frame in read:
+            print(frame)
+
+.. Note::
+
+    If you want to synchronize multiple data streams, have a look into :mod:`ifxdaq.fileio.sync`.

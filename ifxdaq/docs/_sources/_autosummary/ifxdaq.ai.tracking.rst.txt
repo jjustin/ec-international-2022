@@ -1,0 +1,38 @@
+ifxdaq.ai.tracking
+==================
+
+.. automodule:: ifxdaq.ai.tracking
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   ifxdaq.ai.tracking.deep_sort
+   ifxdaq.ai.tracking.distances
+   ifxdaq.ai.tracking.kalman
+   ifxdaq.ai.tracking.linear_assignment
+   ifxdaq.ai.tracking.reid
+   ifxdaq.ai.tracking.stage
+   ifxdaq.ai.tracking.track
+   ifxdaq.ai.tracking.tracker
+

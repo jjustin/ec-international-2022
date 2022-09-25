@@ -1,0 +1,23 @@
+ifxdaq.custom\_typing
+=====================
+
+.. automodule:: ifxdaq.custom_typing
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

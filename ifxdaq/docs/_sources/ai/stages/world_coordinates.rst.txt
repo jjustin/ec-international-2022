@@ -1,0 +1,21 @@
+World coordinates stage
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Transform image coordinate labels into 3d world coordinates. This requires that for the recording **depth data** and
+generated labels are available. The transformation is done by merging image coordinates and depth information together.
+Camera distortions are compensated by automatically recorded intrinsic camera parameters.
+
+The world coordinate system is oriented like in the image below:
+
+  .. image:: media/coordinate_system.png
+
+
+.. list-table:: **Available stages**
+  :header-rows: 1
+
+  * - Stage name
+    - Description & Parameters (API)
+
+  * - ``world_coordinates``
+    - .. autofunction:: ifxdaq.ai.world_coordinates.stage.world_coordinates
+        :noindex:

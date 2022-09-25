@@ -1,0 +1,159 @@
+.. _file_format:
+
+File format reference
+#####################
+
+
+Recordings
+^^^^^^^^^^
+
+Exemplary recording::
+
+    recording_2022_01_18_08_57_16   <--- Recording directory
+    |-- CamIntelRealSense_00            <--- Sensor directory
+    |   |-- config.json                     <--- Configuration
+    |   |-- depth.npy                       <--- Sensor data
+    |   |-- depth_timestamp.csv             <--- Sensor timestamps
+    |   |-- format.version                  <--- Format version
+    |   |-- meta.json                       <--- Sensor meta data
+    |   |-- rgb.mp4                         <--- Sensor data
+    |   `-- rgb_timestamp.csv               <--- Sensor timestamps
+    |-- Detection_00                    <--- Detection stage directory
+    |   |-- format.version                  <--- Format version
+    |   |-- label.json                      <--- Label data
+    |   |-- label_timestamp.csv             <--- Label timestamps
+    |   |-- meta.json                       <--- Label meta data
+    |-- Tracking_00                     <--- Tracking stage directory
+    |   |-- format.version                  <--- Format version
+    |   |-- label.json                      <--- Label data
+    |   |-- label_timestamp.csv             <--- Label timestamps
+    |   |-- meta.json                       <--- Label meta data
+    |-- RadarIfxAvian_00                <--- Sensor directory
+    |   |-- config.json                     <--- Configuration
+    |   |-- format.version                  <--- Format version
+    |   |-- meta.json                       <--- Sensor meta data
+    |   |-- radar.npy                       <--- Sensor data
+    |   |-- radar_timestamp.csv             <--- Sensor timestamps
+    |   |-- temperature.npy                 <--- Sensor data
+    |   `-- temperature_timestamp.csv       <--- Sensor timestamps
+    |-- RadarIfxAvian_01                <--- Sensor directory
+    |   |-- config.json                     <--- Configuration
+    |   |-- format.version                  <--- Format version
+    |   |-- meta.json                       <--- Sensor meta data
+    |   |-- radar.npy                       <--- Sensor data
+    |   |-- radar_timestamp.csv             <--- Sensor timestamps
+    |   |-- temperature.npy                 <--- Sensor data
+    |   `-- temperature_timestamp.csv       <--- Sensor timestamps
+    `-- meta.json                       <--- Global meta data
+
+
+A recording is a set of files that were created simultaneously. The data from a single recording is organized within
+a folder. We use the following naming convention to encode the start time of the recording in the folder name::
+
+    recording_<YEAR>_<MONTH>_<DAY>_<HOUR>_<MINUTE>_<SECOND>
+
+
+e.g.::
+
+    recording_2021_04_14_09_17_54   ==>  2021/04/14 09:17:54
+
+
+**Global meta data**
+
+We store some global meta data that applies to all sensors in a file called ``meta.json``. You find more information
+in the :ref:`metadata` section.
+
+**Sensor data**
+
+Data belonging to a single sensors is stored in an individual directory. The name of the directory is derived by the
+type of the sensor and a running number::
+
+    <SensorType>_<RunningNumber>
+
+In every sensor directory you will find the following files:
+
+    - data files - The actual sensor data:
+
+        - :ref:`radar`
+        - :ref:`rgb`
+        - :ref:`depth`
+        - :ref:`temperature`
+
+    - :ref:`metadata` - Device dependent meta data.
+    - :ref:`timestamps` - One timestamp file for each sensor stream.
+    - ``config.*`` - Configuration file of the sensor. We reuse the proprietary configuration files from all sensors.
+    - :ref:`format_version` - Indicating the file format version.
+
+
+**Label stage data**
+
+Labels belonging to a single stage are stored in an individual directory. The name of the directory is derived by
+the stage name and a running number::
+
+    <Stage>_<RunningNumber>
+
+In every label directory you will find the following files:
+
+    - :ref:`metadata` - Algorithm dependent meta data and configurations.
+    - :ref:`timestamps` - One timestamp file for each label stream.
+    - :ref:`format_version` - Indicating the file format version.
+
+Depending on the stage also one or more of the following files are present:
+
+    - :ref:`label` - The actual labels.
+    - :ref:`rgb` - Labeled video.
+
+
+File formats
+^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   file_format/format
+   file_format/timestamp
+   file_format/meta
+   file_format/radar
+   file_format/rgb
+   file_format/depth
+   file_format/temperature
+   file_format/label
+
+
+Design decisions
+^^^^^^^^^^^^^^^^
+
+**Retrospective - HDF5 (until 2021/08)**
+
+We started to store data in HDF5 files. However, after some time we recognized some serious drawbacks:
+
+- High entry for beginners
+- Sometimes poor performance
+- Need for specialized tools to explore the data (`HDFView <https://www.hdfgroup.org/downloads/hdfview/>`_)
+- Single library implementation, all wrappers build on this implementation
+
+Here are some other articles that highlight some of the advantages and disadvantages of HDF5:
+
+- `Moving away from HDF5 <https://cyrille.rossant.net/moving-away-hdf5/>`_
+- `Should you use HDF5 <https://cyrille.rossant.net/should-you-use-hdf5/>`_
+- `On HDF5 and the future of data management <http://blog.khinsen.net/posts/2016/01/07/on-hdf5-and-the-future-of-data-management/>`_
+
+
+**Learnings - Resulting in file format v1.0 (from 2021/08)**
+
+While looking for an alternative for HDF5 to store our data, we understood that there is no such generic file format
+to store various types of data. We decided that we want to use for every type of data a simple file format that meets
+the following requirements:
+
+- simple to use and explore
+- a natural fit to the type of data
+- scalable
+- cross-platform support
+- OpenSource
+
+**Discussions and proposals are tracked in JIRA**
+
+- Data format: `SENSYS-207 <https://jirard.intra.infineon.com/browse/SENSYS-207>`_
+- Label format: `SENSYS-214 <https://jirard.intra.infineon.com/browse/SENSYS-214>`_
+- Meta data format: `SENSYS-217 <https://jirard.intra.infineon.com/browse/SENSYS-217>`_

@@ -1,0 +1,30 @@
+ifxdaq.fileio.json
+==================
+
+.. automodule:: ifxdaq.fileio.json
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ReaderJson
+      RecorderJson
+   
+   
+
+   
+   
+   
+
+
+

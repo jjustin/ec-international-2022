@@ -1,0 +1,30 @@
+ifxdaq.fileio.npy
+=================
+
+.. automodule:: ifxdaq.fileio.npy
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ReaderNpy
+      RecorderNpy
+   
+   
+
+   
+   
+   
+
+
+

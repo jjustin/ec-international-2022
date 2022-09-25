@@ -1,0 +1,35 @@
+ifxdaq.ai.label
+===============
+
+.. automodule:: ifxdaq.ai.label
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cartesian_to_spherical
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      LabelLoader
+   
+   
+
+   
+   
+   
+
+
+

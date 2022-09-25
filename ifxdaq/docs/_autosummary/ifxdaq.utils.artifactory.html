@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ifxdaq.utils.artifactory &mdash; ifxdaq  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ifxdaq.utils.common" href="ifxdaq.utils.common.html" />
+    <link rel="prev" title="ifxdaq.utils" href="ifxdaq.utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ifxdaq
+            <img src="../_static/ifx_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ifxdaq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daqkit.html">DaqKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../label.html">Labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">FAQ / Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How To Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ifxdaq.html">ifxdaq</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.ai.html">ifxdaq.ai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.custom_typing.html">ifxdaq.custom_typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.errors.html">ifxdaq.errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.fileio.html">ifxdaq.fileio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager.html">ifxdaq.manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager_config.html">ifxdaq.manager_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.process.html">ifxdaq.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.record.html">ifxdaq.record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.sensor.html">ifxdaq.sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.thread.html">ifxdaq.thread</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ifxdaq.utils.html">ifxdaq.utils</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ifxdaq.utils.artifactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.utils.common.html">ifxdaq.utils.common</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.worker.html">ifxdaq.worker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../file_format.html">File format reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ifxdaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API reference</a> &raquo;</li>
+          <li><a href="ifxdaq.html">ifxdaq</a> &raquo;</li>
+          <li><a href="ifxdaq.utils.html">ifxdaq.utils</a> &raquo;</li>
+      <li>ifxdaq.utils.artifactory</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/ifxdaq.utils.artifactory.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ifxdaq.utils.artifactory">
+<span id="ifxdaq-utils-artifactory"></span><h1>ifxdaq.utils.artifactory<a class="headerlink" href="#module-ifxdaq.utils.artifactory" title="Permalink to this headline"></a></h1>
+<p>Utils to use JFrog’s artifactory.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.utils.artifactory.download_artifact" title="ifxdaq.utils.artifactory.download_artifact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_artifact</span></code></a>(src, dst)</p></td>
+<td><p>Download an artifact from JFrog artifactory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ifxdaq.utils.artifactory.validate_artifactory_path" title="ifxdaq.utils.artifactory.validate_artifactory_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_artifactory_path</span></code></a>(url)</p></td>
+<td><p>Validate that the given Artifactory path (URL) is accessible and exists.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.utils.artifactory.ModelLoader" title="ifxdaq.utils.artifactory.ModelLoader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelLoader</span></code></a>([url, cache_dir])</p></td>
+<td><p>Class to get pretrained ML models from Infineon JFrog Artifactory.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="ifxdaq.utils.artifactory.ModelLoader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ifxdaq.utils.artifactory.</span></span><span class="sig-name descname"><span class="pre">ModelLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://artifactory.intra.infineon.com/artifactory/gen-pmm-sensys-local/ifxdaq/models/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.utils.artifactory.ModelLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to get pretrained ML models from Infineon JFrog Artifactory.</p>
+<p>Load the models from Artifactory and store them inside the local cache folder. After the first usage,
+the cached models are used by default.</p>
+<p>The locations to store your models are used in the following order:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cache_dir</span></code> argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$IFXDAQ_CACHE</span></code>, if environment variable <code class="docutils literal notranslate"><span class="pre">$IFXDAQ_CACHE</span></code> is set.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~/.cache/ifxdaq</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a connection to the Infineon JFrog Artifactory is not possible, you can also manually download the
+ML models and place them accordingly inside your local cache folder.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – URL to the JFrog Artifactory that contains the models &amp; weights.</p></li>
+<li><p><strong>cache_dir</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Set the cache dir to save downloaded models &amp; weights.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ifxdaq.utils.artifactory.validate_artifactory_path" title="ifxdaq.utils.artifactory.validate_artifactory_path"><code class="xref py py-func docutils literal notranslate"><span class="pre">validate_artifactory_path()</span></code></a>: Validate an JFrog Artifactory path.</p></li>
+<li><p><a class="reference internal" href="#ifxdaq.utils.artifactory.download_artifact" title="ifxdaq.utils.artifactory.download_artifact"><code class="xref py py-func docutils literal notranslate"><span class="pre">download_artifact()</span></code></a>: Download artifacts from JFrog Artifactory.</p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ifxdaq.utils.artifactory.ModelLoader.get_weights">
+<span class="sig-name descname"><span class="pre">get_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_reload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.utils.artifactory.ModelLoader.get_weights" title="Permalink to this definition"></a></dt>
+<dd><p>Get the weights (either from local cache or downloaded).</p>
+<p>If the local and remote file differs, we overwrite the local file with a clean copy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>weights</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Relative path to the weights (inside the Artifactory &amp; cache).</p></li>
+<li><p><strong>force_reload</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Re-download the weights.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Local path to the weights.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ifxdaq.utils.artifactory.ModelLoader.cache_dir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cache_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pathlib.Path</span></em><a class="headerlink" href="#ifxdaq.utils.artifactory.ModelLoader.cache_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Cache directory to store the models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ifxdaq.utils.artifactory.download_artifact">
+<span class="sig-prename descclassname"><span class="pre">ifxdaq.utils.artifactory.</span></span><span class="sig-name descname"><span class="pre">download_artifact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.utils.artifactory.download_artifact" title="Permalink to this definition"></a></dt>
+<dd><p>Download an artifact from JFrog artifactory.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently, we support only public artifacts without authentication.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The Artifactory path (URL) to the file to download.</p></li>
+<li><p><strong>dst</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – File or directory where the artifact is stored. If dst specifies a directory, the file will be copied
+into dst using the base filename from src.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The path to the downloaded file.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If the artifact does not exist.</p></li>
+<li><p><strong>ConnectionError</strong> – If the connection to Artifactory fails.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jfrog.com/artifactory/">Artifactory</a>: A universal repository.</p></li>
+<li><p><a class="reference external" href="https://github.com/devopshq/artifactory#install">Artifactory Python</a>: Python interface library for JFrog Artifactory.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ifxdaq.utils.artifactory.validate_artifactory_path">
+<span class="sig-prename descclassname"><span class="pre">ifxdaq.utils.artifactory.</span></span><span class="sig-name descname"><span class="pre">validate_artifactory_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.utils.artifactory.validate_artifactory_path" title="Permalink to this definition"></a></dt>
+<dd><p>Validate that the given Artifactory path (URL) is accessible and exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The Artifactory path (URL) to check.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If the path does not exist.</p></li>
+<li><p><strong>ValueError</strong> – If the path is malformatted (Unknown protocol or no valid URL).</p></li>
+<li><p><strong>ConnectionError</strong> – If the connection to Artifactory fails.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ifxdaq.utils.html" class="btn btn-neutral float-left" title="ifxdaq.utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ifxdaq.utils.common.html" class="btn btn-neutral float-right" title="ifxdaq.utils.common" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright restricted | Infineon Technologies. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

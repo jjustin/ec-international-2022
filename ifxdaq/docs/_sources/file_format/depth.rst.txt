@@ -1,0 +1,21 @@
+.. _depth:
+
+Depth data (``depth.npy``)
+==============================
+
+**Format**
+
+Depth data is stored in ``depth.npy`` files. The NPY format is a standardized, open-source format to store numerical
+data.
+
+- file type: ``.npy`` (`Numpy documentation <https://numpy.org/devdocs/reference/generated/numpy.lib.format.html>`_)
+- data type: ``uint16``
+- data shape: 4D tensor - ``(frames, height, width)``
+
+
+**Available libraries**
+
+- ifxdaq: :class:`~ifxdaq.fileio.npy.ReaderNpy`
+- Python: `np.load <https://numpy.org/doc/stable/reference/generated/numpy.load.html>`_
+- C: `cnpy <https://github.com/rogersce/cnpy>`_
+- Matlab: `npy-matlab <https://github.com/kwikteam/npy-matlab>`_

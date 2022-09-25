@@ -1,0 +1,13 @@
+.. _format_version:
+
+Format (``format.version``)
+===============================
+
+The ``format.version`` file is used to indicate the version of the underlying file format. This can be used in
+future to ensure compatibility across different versions of the file format.
+
+  ======== ========
+  Version  Date
+  ======== ========
+  1.0.0    08/2021
+  ======== ========

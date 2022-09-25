@@ -1,0 +1,21 @@
+.. _temperature:
+
+Temperature data (``temperature.npy``)
+======================================
+
+**Format**
+
+Temperature data is stored in ``temperature.npy`` files. The NPY format is a standardized, open-source format to store
+numerical data.
+
+- file type: ``.npy`` (`Numpy documentation <https://numpy.org/devdocs/reference/generated/numpy.lib.format.html>`_)
+- data type: ``float32``
+- data shape: 2D tensor - ``(#measurement, measurement)``
+
+
+**Available libraries**
+
+- ifxdaq: :class:`~ifxdaq.fileio.npy.ReaderNpy`
+- Python: `np.load <https://numpy.org/doc/stable/reference/generated/numpy.load.html>`_
+- C: `cnpy <https://github.com/rogersce/cnpy>`_
+- Matlab: `npy-matlab <https://github.com/kwikteam/npy-matlab>`_

@@ -1,0 +1,30 @@
+ifxdaq.ai.tracking.distances
+============================
+
+.. automodule:: ifxdaq.ai.tracking.distances
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      nn_cosine_distance
+      nn_euclidean_distance
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,29 @@
+ifxdaq.manager
+==============
+
+.. automodule:: ifxdaq.manager
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SensorManager
+   
+   
+
+   
+   
+   
+
+
+

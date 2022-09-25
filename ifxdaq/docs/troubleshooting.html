@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ / Troubleshooting &mdash; ifxdaq  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How To Contribute" href="contributing.html" />
+    <link rel="prev" title="Compose stage" href="ai/stages/compose.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ifxdaq
+            <img src="_static/ifx_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">ifxdaq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daqkit.html">DaqKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">Labeling</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ / Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How To Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_format.html">File format reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ifxdaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>FAQ / Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/troubleshooting.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="faq-troubleshooting">
+<h1>FAQ / Troubleshooting<a class="headerlink" href="#faq-troubleshooting" title="Permalink to this headline"></a></h1>
+<p>In this section we try to cover frequent problems. If you had an issue and found already a solution on your own, please
+add it here.</p>
+<p><strong>Why is the <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> command not found if I call it from commandline?</strong></p>
+<ul class="simple">
+<li><p>Most probably the Python environment is not added to your PATH variable correctly.</p></li>
+<li><p>Check if <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> is correctly installed with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">list</span></code>. There should be some entry for <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code>. If there
+is no entry, <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> is not properly installed. Please have a look into the installation instructions.</p></li>
+<li><p>Try to run the commands explicitly with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">ifxdaq</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Why is my Infineon Avian (BGT60TRxx) radar device not detected?</strong></p>
+<ul class="simple">
+<li><p>Make sure your radar board has the latest firmware (2.5.x).</p></li>
+<li><p>If the board is connected, a green LED should blink in idle mode.</p></li>
+<li><p>Check with the <code class="docutils literal notranslate"><span class="pre">Radar</span> <span class="pre">Fusion</span> <span class="pre">GUI</span></code> (from Infineon Toolbox) or <code class="docutils literal notranslate"><span class="pre">Sensing</span> <span class="pre">GUI</span></code> if your device is visible.</p></li>
+<li><p>The radar boards have a low power consumption, but with long USB cables there could be some powered USB hub required.</p></li>
+<li><p>USB supports at maximum 5 meters without additional power supply, or 25 meters with serially chained USB hubs.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Where do I get the latest firmware for my Infineon radar?</strong></p>
+<ul class="simple">
+<li><p>The firmware is part of the Radar Development Kit.</p>
+<ul>
+<li><p>Direct download - <em>Infineon internal only</em>: <a class="reference external" href="https://bitbucket.vih.infineon.com/projects/MMWSW/repos/tbx-rdk/raw/assets/tool/application/RDK-TOOLS-SW.zip?at=refs%2Ftags%2Fv3.2.0">RDK3.2 incl. FW
+2.5.3</a></p></li>
+<li><p>via Installer:</p>
+<ul>
+<li><p>Download &amp; install the <a class="reference external" href="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.ifxradarsdk">Radar Development Kit</a>.</p></li>
+<li><p>Download the Software package (Packages/Software) from the Radar Development Kit application.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Extract the downloaded archive &amp; follow the instructions in <code class="docutils literal notranslate"><span class="pre">Firmware/Readme.pdf</span></code> to flash your board.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Why is my Intel RealSense not detected?</strong></p>
+<ul class="simple">
+<li><p>The Intel RealSense has a high power consumption. It might not work, if it is connected with long USB cables and/or
+unpowered USB hubs.</p></li>
+<li><p>Check with the <a class="reference external" href="https://www.intelrealsense.com/sdk-2/">Intel RealSense Viewer</a> if the device is visible. If it is not
+found here, <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> will also not find it.</p></li>
+<li><p>Make sure to connect your Intel RealSense to a high speed USB port (USB 3.0 or higher; currently 3.2 works best).</p></li>
+<li><p>Update the firmware to version 05.13.00.50. This can be done with the <a class="reference external" href="https://www.intelrealsense.com/sdk-2/">Intel RealSense
+Viewer</a></p></li>
+<li><p>Use a USB hub with additional power supply.</p></li>
+<li><p>USB supports at maximum 5 meters without additional power supply, or 25 meters with serially chained USB hubs.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Why is the connection to my devices instable (e.g. frame drops or reconnects)?</strong></p>
+<ul class="simple">
+<li><p>Probably, your USB port delivers not enough power to your devices.</p></li>
+<li><p>Use a USB hub with additional power supply.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>RaspberryPI - Why do I get a <code class="docutils literal notranslate"><span class="pre">libavfilter.so.7</span></code> error?</strong></p>
+<ul>
+<li><p>Raised exception:</p>
+<p><code class="docutils literal notranslate"><span class="pre">libavfilter.so.7:</span> <span class="pre">cannot</span> <span class="pre">open</span> <span class="pre">shared</span> <span class="pre">object</span> <span class="pre">file:</span> <span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code></p>
+</li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">PyAv</span></code> that is based on <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code> to store <code class="docutils literal notranslate"><span class="pre">.mp4</span></code> files.</p></li>
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code> is installed: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ffmpeg</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>RaspberryPI - Why is my video recording lagging?</strong></p>
+<ul class="simple">
+<li><p>We use the <code class="docutils literal notranslate"><span class="pre">H.264</span></code> codec to compress videos on the fly into <code class="docutils literal notranslate"><span class="pre">.mp4</span></code> files.</p></li>
+<li><p>Software-based video encoding is a compute intensive task. Basically, this can be solved in two ways:</p>
+<ul>
+<li><p>Powerful CPUs, which are in your laptops, but not on the RaspberryPi.</p></li>
+<li><p>Highly optimized encoders, which are quite complicated to setup (-&gt; <a class="reference external" href="https://www.raspberrypi.org/forums/viewtopic.php?t=199775">Tutorial on building
+encoders</a>).</p></li>
+</ul>
+</li>
+<li><p>Solution: Use a low frame-rate <strong>and</strong> (/ or) low resolution on your RaspberryPi, e.g. VGA &#64; 15fps.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Why do I get <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">[Errno</span> <span class="pre">28]</span> <span class="pre">No</span> <span class="pre">space</span> <span class="pre">left</span> <span class="pre">on</span> <span class="pre">device</span></code> on the HPC (Gpu-Farm), when I try to label my
+recordings?</strong></p>
+<ul class="simple">
+<li><p>On the HPC, every user’s home directory (<code class="docutils literal notranslate"><span class="pre">~</span></code> / <code class="docutils literal notranslate"><span class="pre">/home/username</span></code>) has a 1GB limitation.</p></li>
+<li><p>By default, we cache our model weights inside <code class="docutils literal notranslate"><span class="pre">~/.cache/ifxdaq</span></code>. If you download a model and exceed the 1GB
+limitation, the exception will be raised.</p></li>
+<li><p>Solution: Specify an alternative location for the <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> cache directory:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">setenv</span> <span class="pre">IFXDAQ_CACHE</span> <span class="pre">/your/desired/location</span></code> - for the current shell and all subshells.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~/.cshrc</span></code> - add the command above to your personal login profile to set it permanently.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><strong>Why do I get <code class="docutils literal notranslate"><span class="pre">ifxdaq.errors.SensorNotFoundError:</span> <span class="pre">Found</span> <span class="pre">no</span> <span class="pre">radar</span> <span class="pre">device</span> <span class="pre">with</span> <span class="pre">UUID</span> <span class="pre">ffffffffffffffffffffffffffffffff.</span></code>?</strong></p>
+<ul class="simple">
+<li><p>This means there is no valid UUID stored on the internal EEPROM.</p></li>
+<li><p>Solution:</p>
+<ul>
+<li><p>Download and extract the <em>UUID tool</em> (Available within the RDK).</p></li>
+<li><p>Connect the sensor.</p></li>
+<li><p>Open a CMD or Powershell.</p></li>
+<li><p>Run the tool:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">uuid_tool_strata.exe</span> <span class="pre">-r</span></code> -&gt; Read the current UUID (fff…)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uuid_tool_strata.exe</span> <span class="pre">-g</span></code> -&gt; Generate a new random UUID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uuid_tool_strata.exe</span> <span class="pre">-h</span></code> -&gt; Help</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><strong>Why do I get <code class="docutils literal notranslate"><span class="pre">ifxdaq.errors.SensorNotFoundError:</span> <span class="pre">Found</span> <span class="pre">no</span> <span class="pre">radar</span> <span class="pre">device</span> <span class="pre">with</span> <span class="pre">UUID</span> <span class="pre">00000000-0000-0000-0000-000000000000.</span></code>?</strong></p>
+<ul class="simple">
+<li><p>This error is an indicator for a broken EEPROM.</p></li>
+<li><p>Since this is a hardware issue, there is no solution from our side, except the suggestion to get a new board.</p></li>
+<li><p>Disclaimer: In future releases, the dependency for a working EEPROM will be dropped and you will be able to use this
+board again.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai/stages/compose.html" class="btn btn-neutral float-left" title="Compose stage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="How To Contribute" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright restricted | Infineon Technologies. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

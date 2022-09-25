@@ -1,0 +1,34 @@
+ifxdaq.ai.detector
+==================
+
+.. automodule:: ifxdaq.ai.detector
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   ifxdaq.ai.detector.abc
+   ifxdaq.ai.detector.detectron
+   ifxdaq.ai.detector.stage
+   ifxdaq.ai.detector.yolo
+

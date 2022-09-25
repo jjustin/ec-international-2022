@@ -1,0 +1,32 @@
+ifxdaq.ai.utils
+===============
+
+.. automodule:: ifxdaq.ai.utils
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AnonymizationStyle
+      BoundingBox
+      Detection
+      TrackState
+   
+   
+
+   
+   
+   
+
+
+

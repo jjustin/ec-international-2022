@@ -1,0 +1,25 @@
+.. _radar:
+
+Radar data (``radar.npy``)
+==============================
+
+**Format**
+
+Radar data is stored in ``radar.npy`` files. The NPY format is a standardized, open-source format to store numerical
+data.
+
+- file type: ``.npy`` (`Numpy documentation <https://numpy.org/devdocs/reference/generated/numpy.lib.format.html>`_)
+- data type: ``uint16`` (unnormalized ADC data)
+- data shape: 4D tensor - ``(frames, antennas, chirps, samples)``
+
+Consequently, a tensor with the shape ``(4803, 3, 256, 64)`` would contain 4803 frames, recorded with 3 antennas,
+256 chirps per frame and 64 samples per chirp. The timestamps from the related timestamps file indicate the arrival time
+of a radar frame on host side.
+
+
+**Available libraries**
+
+- ifxdaq: :class:`~ifxdaq.fileio.npy.ReaderNpy`
+- Python: `np.load <https://numpy.org/doc/stable/reference/generated/numpy.load.html>`_
+- C: `cnpy <https://github.com/rogersce/cnpy>`_
+- Matlab: `npy-matlab <https://github.com/kwikteam/npy-matlab>`_

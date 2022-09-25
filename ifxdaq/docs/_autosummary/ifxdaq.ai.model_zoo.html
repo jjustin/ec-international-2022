@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ifxdaq.ai.model_zoo &mdash; ifxdaq  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ifxdaq.ai.stage_abc" href="ifxdaq.ai.stage_abc.html" />
+    <link rel="prev" title="ifxdaq.ai.label" href="ifxdaq.ai.label.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ifxdaq
+            <img src="../_static/ifx_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ifxdaq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daqkit.html">DaqKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../label.html">Labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">FAQ / Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How To Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ifxdaq.html">ifxdaq</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="ifxdaq.ai.html">ifxdaq.ai</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.commands.html">ifxdaq.ai.commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.compose.html">ifxdaq.ai.compose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.detector.html">ifxdaq.ai.detector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.filter.html">ifxdaq.ai.filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.label.html">ifxdaq.ai.label</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ifxdaq.ai.model_zoo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.stage_abc.html">ifxdaq.ai.stage_abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.tracking.html">ifxdaq.ai.tracking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.utils.html">ifxdaq.ai.utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.visualization.html">ifxdaq.ai.visualization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ifxdaq.ai.world_coordinates.html">ifxdaq.ai.world_coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.custom_typing.html">ifxdaq.custom_typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.errors.html">ifxdaq.errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.fileio.html">ifxdaq.fileio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager.html">ifxdaq.manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.manager_config.html">ifxdaq.manager_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.process.html">ifxdaq.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.record.html">ifxdaq.record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.sensor.html">ifxdaq.sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.thread.html">ifxdaq.thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.utils.html">ifxdaq.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ifxdaq.worker.html">ifxdaq.worker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../file_format.html">File format reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ifxdaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API reference</a> &raquo;</li>
+          <li><a href="ifxdaq.html">ifxdaq</a> &raquo;</li>
+          <li><a href="ifxdaq.ai.html">ifxdaq.ai</a> &raquo;</li>
+      <li>ifxdaq.ai.model_zoo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/ifxdaq.ai.model_zoo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ifxdaq.ai.model_zoo">
+<span id="ifxdaq-ai-model-zoo"></span><h1>ifxdaq.ai.model_zoo<a class="headerlink" href="#module-ifxdaq.ai.model_zoo" title="Permalink to this headline"></a></h1>
+<p>Collection of pretrained models.</p>
+<section id="detectron-detection">
+<h2>Detectron Detection<a class="headerlink" href="#detectron-detection" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><strong>Public source</strong>: <a class="reference external" href="https://github.com/facebookresearch/detectron2/blob/main/MODEL_ZOO.md#coco-object-detection-baselines">Detectron2 Model Zoo - COCO Object Detection Baselines</a></p></li>
+<li><p><strong>Class</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">DetectronDetection</span></code></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model name / architecture</p></th>
+<th class="head"><p>Weights path (Relative path inside the <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> cache directory)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>faster_rcnn_R_50_C4_1x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_50_C4_1x/137257644/model_final_721ade.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>faster_rcnn_R_50_DC5_1x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_50_DC5_1x/137847829/model_final_51d356.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>faster_rcnn_R_50_FPN_1x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_50_FPN_1x/137257794/model_final_b275ba.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>faster_rcnn_R_50_C4_3x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_50_C4_3x/137849393/model_final_f97cb7.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>faster_rcnn_R_50_DC5_3x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_50_DC5_3x/137849425/model_final_68d202.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>faster_rcnn_R_50_FPN_3x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_50_FPN_3x/137849458/model_final_280758.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>faster_rcnn_R_101_C4_3x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_101_C4_3x/138204752/model_final_298dad.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>faster_rcnn_R_101_DC5_3x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_101_DC5_3x/138204841/model_final_3e0943.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>faster_rcnn_R_101_FPN_3x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_R_101_FPN_3x/137851257/model_final_f6e8b1.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>faster_rcnn_X_101_32x8d_FPN_3x</p></td>
+<td><p>detectron2/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>retinanet_R_50_FPN_1x</p></td>
+<td><p>detectron2/COCO-Detection/retinanet_R_50_FPN_1x/190397773/model_final_bfca0b.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>retinanet_R_50_FPN_3x</p></td>
+<td><p>detectron2/COCO-Detection/retinanet_R_50_FPN_3x/190397829/model_final_5bd44e.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>retinanet_R_101_FPN_3x</p></td>
+<td><p>detectron2/COCO-Detection/retinanet_R_101_FPN_3x/190397697/model_final_971ab9.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>rpn_R_50_C4_1x</p></td>
+<td><p>detectron2/COCO-Detection/rpn_R_50_C4_1x/137258005/model_final_450694.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>rpn_R_50_FPN_1x</p></td>
+<td><p>detectron2/COCO-Detection/rpn_R_50_FPN_1x/137258492/model_final_02ce48.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>fast_rcnn_R_50_FPN_1x</p></td>
+<td><p>detectron2/COCO-Detection/fast_rcnn_R_50_FPN_1x/137635226/model_final_e5f7ce.pkl</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="detectron-keypoints">
+<h2>Detectron Keypoints<a class="headerlink" href="#detectron-keypoints" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><strong>Public source</strong>: <a class="reference external" href="https://github.com/facebookresearch/detectron2/blob/main/MODEL_ZOO.md#coco-instance-segmentation-baselines-with-mask-r-cnn">Detectron2 Model Zoo - COCO Instance Segmentation Baselines with Mask R-CNN</a></p></li>
+<li><p><strong>Class</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">DetectronKeypoints</span></code></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model name / architecture</p></th>
+<th class="head"><p>Weights path (Relative path inside the <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> cache directory)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>keypoint_rcnn_R_50_FPN_1x</p></td>
+<td><p>detectron2/COCO-Keypoints/keypoint_rcnn_R_50_FPN_1x/137261548/model_final_04e291.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>keypoint_rcnn_R_50_FPN_3x</p></td>
+<td><p>detectron2/COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x/137849621/model_final_a6e10b.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>keypoint_rcnn_R_101_FPN_3x</p></td>
+<td><p>detectron2/COCO-Keypoints/keypoint_rcnn_R_101_FPN_3x/138363331/model_final_997cc7.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>keypoint_rcnn_X_101_32x8d_FPN_3x</p></td>
+<td><p>detectron2/COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x/139686956/model_final_5ad38f.pkl</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="detectron-segmentation">
+<h2>Detectron Segmentation<a class="headerlink" href="#detectron-segmentation" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><strong>Public source</strong>: <a class="reference external" href="https://github.com/facebookresearch/detectron2/blob/main/MODEL_ZOO.md#coco-person-keypoint-detection-baselines-with-keypoint-r-cnn">Detectron2 Model Zoo - COCO Person Keypoint Detection Baselines with Keypoint R-CNN</a></p></li>
+<li><p><strong>Class</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">DetectronSegmentation</span></code></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model name / architecture</p></th>
+<th class="head"><p>Weights path (Relative path inside the <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> cache directory)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mask_rcnn_R_50_C4_1x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x/137259246/model_final_9243eb.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>mask_rcnn_R_50_DC5_1x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x/137260150/model_final_4f86c3.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>mask_rcnn_R_50_FPN_1x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x/137260431/model_final_a54504.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>mask_rcnn_R_50_C4_3x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x/137849525/model_final_4ce675.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>mask_rcnn_R_50_DC5_3x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x/137849551/model_final_84107b.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>mask_rcnn_R_50_FPN_3x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>mask_rcnn_R_101_C4_3x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x/138363239/model_final_a2914c.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>mask_rcnn_R_101_DC5_3x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x/138363294/model_final_0464b7.pkl</p></td>
+</tr>
+<tr class="row-even"><td><p>mask_rcnn_R_101_FPN_3x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x/138205316/model_final_a3ec72.pkl</p></td>
+</tr>
+<tr class="row-odd"><td><p>mask_rcnn_X_101_32x8d_FPN_3x</p></td>
+<td><p>detectron2/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x/139653917/model_final_2d9806.pkl</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ultralytics-yolov5">
+<h2>Ultralytics YOLOv5<a class="headerlink" href="#ultralytics-yolov5" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><strong>Public source</strong>: <a class="reference external" href="https://github.com/ultralytics/yolov5/releases/tag/v6.0#assets">YOLOv5 (ultralytics) - v5.0</a></p></li>
+<li><p><strong>Class</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">YOLODetection</span></code></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model name / architecture</p></th>
+<th class="head"><p>Weights path (Relative path inside the <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> cache directory)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yolov5x_human</p></td>
+<td><p>ultralytics/yolov5/custom/yolov5x_human.pt</p></td>
+</tr>
+<tr class="row-odd"><td><p>yolov5s</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5s.pt</p></td>
+</tr>
+<tr class="row-even"><td><p>yolov5m</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5m.pt</p></td>
+</tr>
+<tr class="row-odd"><td><p>yolov5l</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5l.pt</p></td>
+</tr>
+<tr class="row-even"><td><p>yolov5x</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5x.pt</p></td>
+</tr>
+<tr class="row-odd"><td><p>yolov5s6</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5s6.pt</p></td>
+</tr>
+<tr class="row-even"><td><p>yolov5m6</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5m6.pt</p></td>
+</tr>
+<tr class="row-odd"><td><p>yolov5l6</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5l6.pt</p></td>
+</tr>
+<tr class="row-even"><td><p>yolov5x6</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5x6.pt</p></td>
+</tr>
+<tr class="row-odd"><td><p>yolov5s-VOC</p></td>
+<td><p>ultralytics/yolov5/torchhub/yolov5s-VOC.pt</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLOv5m6-Argoverse</p></td>
+<td><p>ultralytics/yolov5/torchhub/YOLOv5m6-Argoverse.pt</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reid-models">
+<h2>ReID Models<a class="headerlink" href="#reid-models" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><strong>Public source</strong>: <a class="reference external" href="https://github.com/ZQPei/deep_sort_pytorch">Github - Deep Sort with PyTorch (ZQPei)</a> / <a class="reference external" href="https://drive.google.com/file/d/1_qwTWdzT9dWNudpusgKavj_4elGgbkUN/view?usp=sharing">Google Drive Model Weights</a></p></li>
+<li><p><strong>Class</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">ReIDNetwork</span></code></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model name / architecture</p></th>
+<th class="head"><p>Weights path (Relative path inside the <code class="docutils literal notranslate"><span class="pre">ifxdaq</span></code> cache directory)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ReID</p></td>
+<td><p>DeepSORT/ReID/ckpt.t7</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.ai.model_zoo.get_weights" title="ifxdaq.ai.model_zoo.get_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_weights</span></code></a>(architecture)</p></td>
+<td><p>Get the available weights for a specific model architecture.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ifxdaq.ai.model_zoo.print_all_models" title="ifxdaq.ai.model_zoo.print_all_models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_all_models</span></code></a>()</p></td>
+<td><p>Print all available pretrained models.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ifxdaq.ai.model_zoo.print_models" title="ifxdaq.ai.model_zoo.print_models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_models</span></code></a>(models)</p></td>
+<td><p>Print models for one algorithm.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="ifxdaq.ai.model_zoo.get_weights">
+<span class="sig-prename descclassname"><span class="pre">ifxdaq.ai.model_zoo.</span></span><span class="sig-name descname"><span class="pre">get_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">architecture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.ai.model_zoo.get_weights" title="Permalink to this definition"></a></dt>
+<dd><p>Get the available weights for a specific model architecture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>architecture</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>]) – Class of the model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A mapping with model names and weight URLs.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If model weights are not available.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ifxdaq.ai.model_zoo.print_all_models">
+<span class="sig-prename descclassname"><span class="pre">ifxdaq.ai.model_zoo.</span></span><span class="sig-name descname"><span class="pre">print_all_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.ai.model_zoo.print_all_models" title="Permalink to this definition"></a></dt>
+<dd><p>Print all available pretrained models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ifxdaq.ai.model_zoo.print_models">
+<span class="sig-prename descclassname"><span class="pre">ifxdaq.ai.model_zoo.</span></span><span class="sig-name descname"><span class="pre">print_models</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">models</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ifxdaq.ai.model_zoo.print_models" title="Permalink to this definition"></a></dt>
+<dd><p>Print models for one algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ifxdaq.ai.label.html" class="btn btn-neutral float-left" title="ifxdaq.ai.label" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ifxdaq.ai.stage_abc.html" class="btn btn-neutral float-right" title="ifxdaq.ai.stage_abc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright restricted | Infineon Technologies. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

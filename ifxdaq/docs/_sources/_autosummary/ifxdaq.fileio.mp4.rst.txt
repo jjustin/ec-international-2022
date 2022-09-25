@@ -1,0 +1,30 @@
+ifxdaq.fileio.mp4
+=================
+
+.. automodule:: ifxdaq.fileio.mp4
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ReaderMp4
+      RecorderMp4
+   
+   
+
+   
+   
+   
+
+
+

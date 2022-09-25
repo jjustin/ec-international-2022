@@ -1,0 +1,32 @@
+ifxdaq.ai.detector.detectron
+============================
+
+.. automodule:: ifxdaq.ai.detector.detectron
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DetectronABC
+      DetectronDetection
+      DetectronKeypoints
+      DetectronSegmentation
+   
+   
+
+   
+   
+   
+
+
+

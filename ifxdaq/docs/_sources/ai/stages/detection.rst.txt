@@ -1,0 +1,77 @@
+Detection stage
+^^^^^^^^^^^^^^^
+
+Detect persons & objects in images. These stages are applied to raw camera recordings and produce detections (bounding
+boxes, semantic segmentation, or human keypoints) in image coordinates.
+
+
+**Pretrained models**
+
+Available models for the detection algorithms are listed in the :py:mod:`~ifxdaq.ai.model_zoo`. The weights for a
+specific model must be downloaded & stored in the ``ifxdaq`` cache directory. The ``ifxdaq`` cache directory is
+specified by:
+
+1. ``$IFXDAQ_CACHE``, if environment variable ``$IFXDAQ_CACHE`` is set.
+2. ``~/.cache/ifxdaq``
+
+
+.. important::
+
+  If your machine is within the Infineon intranet, the weights of the specified models will be automatically
+  downloaded and cached.
+
+  If you operate outside the Infineon intranet, you have to download the weights manually and place them inside the
+  ``ifxdaq`` cache directory. You find links to public sources & the specific location inside the cache directory in
+  the :py:mod:`~ifxdaq.ai.model_zoo`.
+
+    * ``yolov5x_human`` for ``yolo_detection`` stage: Only within the Infineon company network available.
+
+
+.. list-table:: **Available stages**
+    :header-rows: 1
+
+    * - Stage name & preview
+      - Description & Parameters (API)
+
+    * - ``yolo_detection``
+
+        .. image:: media/detection.png
+
+      - .. autofunction:: ifxdaq.ai.detector.stage.yolo_detection
+          :noindex:
+
+        * Available models: :ref:`_autosummary/ifxdaq.ai.model_zoo:ultralytics yolov5`
+        * Supported classes: `COCO Dataset <https://cocodataset.org/>`_ (Use the `COCO Explorer
+          <https://cocodataset.org/#explore>`_ to get familiar with the dataset.)
+
+    * - ``detectron_detection``
+
+        .. image:: media/detection.png
+
+      - .. autofunction:: ifxdaq.ai.detector.stage.detectron_detection
+          :noindex:
+
+        * Available models: :ref:`_autosummary/ifxdaq.ai.model_zoo:detectron detection`
+        * Supported classes: `COCO Dataset <https://cocodataset.org/>`_ (Use the `COCO Explorer
+          <https://cocodataset.org/#explore>`_ to get familiar with the dataset.)
+
+    * - ``detectron_segmentation``
+
+        .. image:: media/segmentation.png
+
+      - .. autofunction:: ifxdaq.ai.detector.stage.detectron_segmentation
+          :noindex:
+
+        * Available models: :ref:`_autosummary/ifxdaq.ai.model_zoo:detectron segmentation`
+        * Supported classes: `COCO Dataset <https://cocodataset.org/>`_ (Use the `COCO Explorer
+          <https://cocodataset.org/#explore>`_ to get familiar with the dataset.)
+
+    * - ``detectron_keypoints``
+
+        .. image:: media/keypoints.png
+
+      - .. autofunction:: ifxdaq.ai.detector.stage.detectron_keypoints
+          :noindex:
+
+        * Available models: :ref:`_autosummary/ifxdaq.ai.model_zoo:detectron keypoints`
+        * Supported classes: ``person``

@@ -1,0 +1,34 @@
+ifxdaq.ai.tracking.linear\_assignment
+=====================================
+
+.. automodule:: ifxdaq.ai.tracking.linear_assignment
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      iou_cost
+      matching_cascade
+      min_cost_matching
+      state_gate
+      state_similarity
+      visual_similarity
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

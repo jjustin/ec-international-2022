@@ -1,4 +1,0 @@
-We have little to no experience with working with hardware so we got new knowledge in this challenge.
-
-We would encourage you to support running the radar from virutal machines. We and some other pariticapants were having problems because it could not be ran from the virutal machine.
-

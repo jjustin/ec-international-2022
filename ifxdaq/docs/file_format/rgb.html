@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RGB data (rgb.mp4) &mdash; ifxdaq  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Depth data (depth.npy)" href="depth.html" />
+    <link rel="prev" title="Radar data (radar.npy)" href="radar.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ifxdaq
+            <img src="../_static/ifx_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ifxdaq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daqkit.html">DaqKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../label.html">Labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">FAQ / Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How To Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../file_format.html">File format reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../file_format.html#recordings">Recordings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../file_format.html#file-formats">File formats</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format (<code class="docutils literal notranslate"><span class="pre">format.version</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timestamp.html">Timestamps (<code class="docutils literal notranslate"><span class="pre">*_timestamp.csv</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta.html">Meta data (<code class="docutils literal notranslate"><span class="pre">meta.json</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="radar.html">Radar data (<code class="docutils literal notranslate"><span class="pre">radar.npy</span></code>)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RGB data (<code class="docutils literal notranslate"><span class="pre">rgb.mp4</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="depth.html">Depth data (<code class="docutils literal notranslate"><span class="pre">depth.npy</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="temperature.html">Temperature data (<code class="docutils literal notranslate"><span class="pre">temperature.npy</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label.html">Label (<code class="docutils literal notranslate"><span class="pre">label.json</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../file_format.html#design-decisions">Design decisions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ifxdaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../file_format.html">File format reference</a> &raquo;</li>
+      <li>RGB data (<code class="docutils literal notranslate"><span class="pre">rgb.mp4</span></code>)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/file_format/rgb.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rgb-data-rgb-mp4">
+<span id="rgb"></span><h1>RGB data (<code class="docutils literal notranslate"><span class="pre">rgb.mp4</span></code>)<a class="headerlink" href="#rgb-data-rgb-mp4" title="Permalink to this headline"></a></h1>
+<p><strong>Format</strong></p>
+<p>RGB data is stored in <code class="docutils literal notranslate"><span class="pre">rgb.mp4</span></code> videos. Each captured frame has an own timestamp that is stored in the respective
+timestamps file. You can use an arbitrary media player to view the video files.</p>
+<ul class="simple">
+<li><p>file type: <code class="docutils literal notranslate"><span class="pre">.mp4</span></code> (<a class="reference external" href="https://en.wikipedia.org/wiki/MPEG-4_Part_14">mp4&#64;Wikipedia</a>)</p></li>
+</ul>
+<p>If you want to get access to the raw image frames, you have to decompress first the <code class="docutils literal notranslate"><span class="pre">mp4</span></code> files. The output shape
+and data type depend on the library used to decompress the video. Our implementation supports:</p>
+<ul class="simple">
+<li><p>data type: <code class="docutils literal notranslate"><span class="pre">uint8</span></code></p></li>
+<li><p>data shape: 4D tensor - <code class="docutils literal notranslate"><span class="pre">(frames,</span> <span class="pre">height,</span> <span class="pre">width,</span> <span class="pre">channels)</span></code> - Channels is 1 (grayscale) or 3 (RGB).</p></li>
+</ul>
+<p><strong>Available libraries</strong></p>
+<ul class="simple">
+<li><p>ifxdaq: <a class="reference internal" href="../_autosummary/ifxdaq.fileio.mp4.html#ifxdaq.fileio.mp4.ReaderMp4" title="ifxdaq.fileio.mp4.ReaderMp4"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReaderMp4</span></code></a></p></li>
+<li><p>Python: <a class="reference external" href="https://pypi.org/project/opencv-python/">opencv-python</a></p></li>
+<li><p>Matlab: <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/videoreader.html">VideoReader</a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="radar.html" class="btn btn-neutral float-left" title="Radar data (radar.npy)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="depth.html" class="btn btn-neutral float-right" title="Depth data (depth.npy)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright restricted | Infineon Technologies. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

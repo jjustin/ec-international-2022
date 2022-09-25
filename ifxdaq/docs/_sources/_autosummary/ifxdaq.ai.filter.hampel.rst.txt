@@ -1,0 +1,35 @@
+ifxdaq.ai.filter.hampel
+=======================
+
+.. automodule:: ifxdaq.ai.filter.hampel
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      median_absolute_deviation
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      HampelOutlierFilter
+   
+   
+
+   
+   
+   
+
+
+

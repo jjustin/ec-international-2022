@@ -1,0 +1,32 @@
+.. _timestamps:
+
+Timestamps (``*_timestamp.csv``)
+==================================
+
+**Format**
+
+We store timestamps of incoming data packets in ``*_timestamp.csv`` files. The ``*_timestamp.csv`` are pseudo CSV files
+with one timestamp per line. For each sensor recorded one corresponding timestamp file is created (e.g. the timestamps
+from the depth data is stored in a depth_timestamp.csv)
+
+- file type: ``.csv``
+- data type: Unix timestamps in ASCII
+
+Exemplary snippet from a ``*_timestamp.csv`` file::
+
+    1626168682.044495
+    1626168682.1085231
+    1626168682.1740544
+    1626168682.2405002
+
+
+For quick sanity checks, you can find an online converter at https://www.unixtimestamp.com/::
+
+    1626168682.044495  ==>  Tue Jul 13 2021 09:31:22 GMT+0000
+
+
+**Available libraries**
+
+- Python: built-in support
+- Matlab: built-in support
+- C: built-in support

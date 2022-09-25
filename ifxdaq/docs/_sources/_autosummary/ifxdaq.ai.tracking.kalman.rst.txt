@@ -1,0 +1,29 @@
+ifxdaq.ai.tracking.kalman
+=========================
+
+.. automodule:: ifxdaq.ai.tracking.kalman
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      KalmanFilter
+   
+   
+
+   
+   
+   
+
+
+

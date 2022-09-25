@@ -1,0 +1,135 @@
+Labeling
+========
+
+Requirements
+^^^^^^^^^^^^
+
+You need to install the ``ifxdaq[ai]`` extension as described in the :ref:`install:Installation` chapter.
+
+.. tip::
+
+  The PyTorch & Torchvision packages (``torch``, ``torchvision``) that are officially hosted on the Python Package Index
+  (PyPI) might not use available hardware acceleration. In order to speed up processing of the labeling algorithms, we
+  recommend to select & install the appropriate versions of PyTorch & Torchvision that fit to your hardware & CUDA
+  configuration from PyTorch's `Official Get Started Guide <https://pytorch.org/get-started/locally/>`_.
+
+
+.. caution::
+
+  `Detectron2 <https://github.com/facebookresearch/detectron2#readme>`_ contains some of the models that are used in our
+  backend, but it requires a manual installation of the package ``detectron2``. ``detectron2`` is officially only on
+  Linux and macOS supported, but it might also run under Windows. Please have a look into the official `installation
+  guide <https://detectron2.readthedocs.io/en/latest/tutorials/install.html>`_ for detailed installation instructions.
+
+  **YOLO-based algorithms will also work without an installation of**  ``detectron2``.
+
+
+Usage
+^^^^^
+
+We provide a command line tool to label data:
+
+.. code-block:: bash
+
+  ifxdaq label [OPTIONS] CAMERA_RECORD...
+
+
+  Usage: ifxdaq label [OPTIONS] CAMERA_RECORD...
+
+    Label the given CAMERA_RECORD(s).
+
+    Execute a multi-stage labeling pipeline to generate labels from the given
+    CAMERA_RECORD(s). Select from a set of pre-defined labeling pipelines (`-p /
+    --profile`) or pass a custom configuration file (`-c / --config`).
+
+  Options:
+    -c, --config FILE               Path to configuration file, which describes
+                                    a custom labeling pipeline.
+    -p, --profile [human_tracking|human_tracking[gpu]]
+                                    Select a pre-defined labeling pipeline.
+    -h, --help                      Show this message and exit.
+
+``CAMERA_RECORD`` is the path to a folder containing a ``rgb.mp4`` file, e.g.
+``./recording_2022_02_03_12_38_13/CamIntelRealSense_00/``. You can pass multiple camera records, which will be processed
+sequentially.
+
+The labeling tool is based on labeling pipelines. Pipelines are a modular concept to compile different stages (a.k.a.
+building blocks) of algorithms in a processing chain. This allows a customization of the labeling to match specific use
+cases best. The stages generate, transform, filter or visualize labels and build a flexible framework for various
+labeling tasks.
+
+.. tabs::
+
+  .. tab:: Pre-defined labeling pipeline
+
+    ``ifxdaq`` provides pre-defined labeling pipelines for standard use cases. Pre-defined labeling pipelines can
+    be selected with the ``-p / --profile`` option.
+
+    .. note::
+
+      All profiles are provided with a ``[gpu]`` extensions. This allows to run **only** the GPU intensive detection &
+      tracking stage separately.
+
+      Instead of running the whole pipeline with one command:
+
+      .. code::
+
+        ifxdaq label -p <selected profile> CAMERA_RECORD...
+
+      Run first the GPU intensive tasks, and afterwards the rerun the whole pipeline:
+
+      .. code::
+
+        ifxdaq label -p <selected profile>[gpu] CAMERA_RECORD...
+        ifxdaq label -p <selected profile> CAMERA_RECORD...
+
+    Available pipelines:
+
+    .. tabs::
+
+      .. tab:: ``human_tracking``:
+
+        The  ``human_tracking`` pipeline tracks humans, improves the generated labels by applying certain filters,
+        and generates anonymous visualizations of the scene.
+
+        .. literalinclude:: ../src/ifxdaq/ai/profiles/human_tracking.yaml
+          :language: yaml
+          :caption: ``human_tracking`` pipeline definition
+
+
+  .. tab:: Custom labeling pipeline
+
+    .. danger:: Custom labeling pipelines are an experimental feature.
+
+    For specific use cases custom labeling pipelines can be created and used with the ``-c / --config`` option.
+
+    Pipelines are defined in ``.yaml`` files:
+
+    .. code-block:: yaml
+        :caption: configuration file structure
+
+        # Without additional options
+        - <stage name>: []
+
+        # Specify additional options
+        - <stage name>:
+          <option>: <value>
+
+    Have a look into the pre-defined labeling pipelines for some inspiration and examples!
+
+
+Stages
+^^^^^^
+
+The available stages to build labeling pipelines are described in those sections:
+
+.. toctree::
+  :maxdepth: 1
+  :glob:
+
+  ai/stages/detection
+  ai/stages/tracking
+  ai/stages/filter
+  ai/stages/world_coordinates
+  ai/stages/visualization
+  ai/stages/compose

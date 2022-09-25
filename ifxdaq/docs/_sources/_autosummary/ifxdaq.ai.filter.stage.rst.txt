@@ -1,0 +1,39 @@
+ifxdaq.ai.filter.stage
+======================
+
+.. automodule:: ifxdaq.ai.filter.stage
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      crop_lag
+      filter_hampel
+      filter_savgol
+      filter_short
+      merge_tracks
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      FilterStage
+   
+   
+
+   
+   
+   
+
+
+

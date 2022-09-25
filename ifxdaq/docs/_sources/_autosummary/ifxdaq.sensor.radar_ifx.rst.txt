@@ -1,0 +1,29 @@
+ifxdaq.sensor.radar\_ifx
+========================
+
+.. automodule:: ifxdaq.sensor.radar_ifx
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      RadarIfxAvian
+   
+   
+
+   
+   
+   
+
+
+

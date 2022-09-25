@@ -1,0 +1,29 @@
+ifxdaq.ai.filter.savgol
+=======================
+
+.. automodule:: ifxdaq.ai.filter.savgol
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SavGolFilter
+   
+   
+
+   
+   
+   
+
+
+

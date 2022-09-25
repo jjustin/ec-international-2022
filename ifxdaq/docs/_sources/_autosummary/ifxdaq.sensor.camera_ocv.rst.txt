@@ -1,0 +1,29 @@
+ifxdaq.sensor.camera\_ocv
+=========================
+
+.. automodule:: ifxdaq.sensor.camera_ocv
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CamOpenCV
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,37 @@
+ifxdaq.ai.tracking.reid
+=======================
+
+.. automodule:: ifxdaq.ai.tracking.reid
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      make_layers
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BasicBlock
+      Net
+      ReIDNetwork
+   
+   
+
+   
+   
+   
+
+
+

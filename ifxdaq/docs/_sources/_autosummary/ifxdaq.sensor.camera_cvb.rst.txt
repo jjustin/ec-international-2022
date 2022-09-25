@@ -1,0 +1,29 @@
+ifxdaq.sensor.camera\_cvb
+=========================
+
+.. automodule:: ifxdaq.sensor.camera_cvb
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CamCommonVisionBlox
+   
+   
+
+   
+   
+   
+
+
+
